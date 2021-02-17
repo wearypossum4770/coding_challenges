@@ -1,4 +1,4 @@
-pub fn addition(a: i64, b: i64) -> i64 {
+pub fn addition(a: i32, b: i32) -> i32 {
     return a + b;
 }
 
