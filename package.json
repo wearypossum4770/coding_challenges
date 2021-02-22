@@ -7,6 +7,7 @@
   "author": "wearypossum4770 <wearypossum4770@yahoo.com>",
   "license": "MIT",
     "scripts": {
+      "test":"node NODE_OPTIONS=--experimental-vm-modules npx jest --watch ",
     "pretty": "node ./cleaner.js && yarn prettier --write .",
     "new": "node ./cleaner.js && node ./new_module.js"
   },
