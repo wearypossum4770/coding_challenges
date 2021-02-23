@@ -2,17 +2,18 @@
   "name": "coding_challenges",
   "version": "1.0.0",
   "main": "index.js",
- "type":"module",
+  "type": "module",
   "repository": "git@github.com:wearypossum4770/coding_challenges.git",
   "author": "wearypossum4770 <wearypossum4770@yahoo.com>",
   "license": "MIT",
-    "scripts": {
-      "test":"node NODE_OPTIONS=--experimental-vm-modules npx jest --watch ",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --watch ",
     "pretty": "node ./cleaner.js && yarn prettier --write .",
     "new": "node ./cleaner.js && node ./new_module.js"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^0.13.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "prettier-plugin-go-template": "^0.0.10",
     "prettier-plugin-java": "^1.0.1",
