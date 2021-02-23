@@ -1,4 +1,4 @@
-import removeDuplicates from '../src/easy/removeDuplicates.js'
+import removeDuplicates from '../src/removeDuplicates.js'
 
 test.each(
 
