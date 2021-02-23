@@ -1,4 +1,4 @@
-import { runningSum } from "../src/easy/runningSum.js";
+import { runningSum } from "../src/runningSum.js";
 
 test.each([
   [
