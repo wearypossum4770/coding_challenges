@@ -1,4 +1,4 @@
-import { twoSum } from "../src/easy/twoSum.js";
+import { twoSum } from "../src/twoSum.js";
 
 test.each([
   [[2, 7, 11, 15], 9, [0, 1]],
