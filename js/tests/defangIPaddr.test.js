@@ -1,4 +1,4 @@
-import defangIPaddr from '../src/easy/defangIPaddr.js'
+import defangIPaddr from '../src/defangIPaddr.js'
 
 test.each([
     ["1.1.1.1", "1[.]1[.]1[.]1"],
