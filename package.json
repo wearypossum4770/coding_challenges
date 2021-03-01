@@ -16,7 +16,7 @@
     "wearypossum4770"
   ],
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --watch ",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --watch --config ./.jest.config.mjs",
     "pretty": "yarn prettier --write .",
     "lint": "",
     "pretty:rust": "node ./cleaner.js && yarn pretty",
