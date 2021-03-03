@@ -1,4 +1,4 @@
-package fibonacci
+package algorithms
 
 func fibonacci(num int) int {
 	if num == 0 || num == 1 {
