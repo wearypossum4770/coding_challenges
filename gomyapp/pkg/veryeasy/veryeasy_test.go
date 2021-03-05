@@ -15,7 +15,7 @@ func TestFibonacci(t *testing.T) {
 		{2, 3, 5},
 	}
 	for _, test := range tests {
-		if output := veryeasy.addition(test.a, test.b); output != test.expected {
+		if output := Addition(test.a, test.b); output != test.expected {
 			t.Error("Test Failed: {} {} inputted, {} expected, recieved: {}", test.a, test.b, test.expected, output)
 		}
 	}
