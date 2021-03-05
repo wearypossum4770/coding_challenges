@@ -1,10 +1,20 @@
 package stringmanipulations
 
-import "bytes"
+import (
+	"bytes"
+	"strings"
+)
 
 // ReverseWords is ...
 func ReverseWords(input string) string {
-	reversed := ""
+	words := strings.Fields(input)
+	length := len(words)
+	var buff bytes.Buffer
+	for i := 0; i < length; i++ {
+		buff.WriteString(words[i])
+		buff.WriteString(" ")
+	}
+	reversed := buff.String()
 	return reversed
 }
 

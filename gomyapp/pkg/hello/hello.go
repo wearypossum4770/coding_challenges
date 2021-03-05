@@ -20,9 +20,11 @@ func main() {
 	// the time, source file, and line number.
 	veryeasy.Addition(20, 30)
 	ip := stringmanipulations.DefangIPAddr("1.1.1.1")
-	summation := arraymanipulations.ReduceArray(1, 2, 3, 4)
+	words :=stringmanipulations.ReverseWords ("this is a sentence")
+summation := arraymanipulations.ReduceArray(1, 2, 3, 4)
 	fmt.Println("the sum of integers in the array: ", summation)
 	fmt.Println(ip)
+fmt.Println(words)
 	fmt.Println("Hello GO!")
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
