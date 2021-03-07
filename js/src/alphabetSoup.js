@@ -1,1 +1,1 @@
-export  const  alphabetSoup = (string) => [...string].sort().join('')
+export const alphabetSoup = (string) => [...string].sort().join("");
