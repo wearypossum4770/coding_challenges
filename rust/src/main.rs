@@ -14,6 +14,8 @@ use crate::next_integer::next_integer;
 use crate::remove_first_char::remove_first_char;
 use crate::remove_spaces::remove_spaces;
 // use crate::reverse_words::reverse_words;
+// use crate::type_array::type_array;
+// use crate::type_tuple::type_tuple;
 mod addition;
 // mod alphabet_soup;
 mod convert_age_to_days;
@@ -30,6 +32,8 @@ mod next_integer;
 mod remove_first_char;
 mod remove_spaces;
 // mod reverse_words;
+// mod type_array;
+// mod type_tuple;
 #[derive(Debug)]
 struct Person {
     name: String,
@@ -47,6 +51,8 @@ fn main() {
         first_char("hello"),
     ];
     let person = Person::new("Herman");
+    // let mut _array_array = vec![type_array()];
+    // let mut _array_tuple = vec![type_tuple()];
     let mut _array64 = vec![convert_days_to_age(0), cubes(3)];
     let mut _array32 = vec![
         next_integer(1),
@@ -54,6 +60,8 @@ fn main() {
         convert_minutes_to_seconds(30),
         convert_age_to_days(3),
     ];
+    // println!("{:?}",_array_array);
+    // println!("{:?}",_array_tuple);
     println!("{:?}", string_array);
     println!("{:?}", person);
     println!("{:?}", _array64);
