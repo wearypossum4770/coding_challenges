@@ -1,5 +1,5 @@
 use crate::addition::addition;
-// use crate::alphabet_soup::alphabet_soup;
+use crate::alphabet_soup::alphabet_soup;
 use crate::convert_age_to_days::convert_age_to_days;
 use crate::convert_days_to_age::convert_days_to_age;
 use crate::convert_minutes_to_seconds::convert_minutes_to_seconds;
@@ -15,7 +15,7 @@ use crate::remove_first_char::remove_first_char;
 use crate::remove_spaces::remove_spaces;
 // use crate::reverse_words::reverse_words;
 mod addition;
-// mod alphabet_soup;
+mod alphabet_soup;
 mod convert_age_to_days;
 mod convert_days_to_age;
 mod convert_minutes_to_seconds;
@@ -47,6 +47,7 @@ fn main() {
         first_char("hello"),
     ];
     let person = Person::new("Herman");
+    let _arrayStrings = vec![alphabet_soup("hello")];
     let mut _array64 = vec![convert_days_to_age(0), cubes(3)];
     let mut _array32 = vec![
         next_integer(1),

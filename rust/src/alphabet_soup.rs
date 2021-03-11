@@ -1,11 +1,14 @@
 pub fn alphabet_soup(input: &str) -> String {
+
     let mut buf = String::with_capacity(input.len());
     for c in input.chars() {
+       println!("{:?}", c);
+    //    to_ascii_lowercase
        if c != ' ' {
           buf.push(c);
        }
     }
-    buf
+    buf.v.sort_unstable();
 }
 #[cfg(test)]
 mod tests {
