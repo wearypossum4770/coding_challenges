@@ -1,4 +1,4 @@
-import { sortDescending } from "../src/sortDescending.js";
+import sortDescending from "../src/sortDescending.js";
 
 test.each([
   [123, 321],
