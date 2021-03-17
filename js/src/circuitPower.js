@@ -1,0 +1,3 @@
+export default function circuitPower(voltage, current){
+    return voltage*current
+}

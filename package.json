@@ -16,6 +16,8 @@
     "wearypossum4770"
   ],
   "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --watch --config ./.jest.config.mjs",
     "pretty": "yarn prettier --write .",
     "lint": "",
@@ -24,13 +26,21 @@
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^0.13.0",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/node-logger": "^6.1.21",
+    "@storybook/preset-create-react-app": "^3.1.6",
+    "@storybook/react": "^6.1.21",
+    "generator-botbuilder": "^4.10.3",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "prettier-plugin-go-template": "^0.0.10",
     "prettier-plugin-java": "^1.0.1",
     "prettier-plugin-sh": "^0.6.0",
     "prettier-plugin-toml": "^0.3.1",
-    "prompts": "^2.4.0"
+    "prompts": "^2.4.0",
+    "yo": "^3.1.1"
   },
   "dependencies": {
     "dotenv": "^8.2.0"
