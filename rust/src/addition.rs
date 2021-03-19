@@ -12,6 +12,7 @@ mod tests {
         assert_eq!(addition(88, 2), 90);
     }
 }
+
 // macro_rules! addition_tests {
 // 	($($name:ident: $value:expr,)*) => {
 // 		$(
