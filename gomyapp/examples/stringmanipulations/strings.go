@@ -1,10 +1,9 @@
-package stringmanipulations
+package strings
 
 import (
 	"bytes"
 	"strings"
 )
-
 // RevcoderseWords is ...
 func ReverseWords(input string) string {
 	words := strings.Fields(input)
@@ -32,3 +31,4 @@ func DefangIPAddr(ipAddress string) string {
 	ip := buff.String()
 	return ip
 }
+
