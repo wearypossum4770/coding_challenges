@@ -1,29 +1,19 @@
-function makeAnagram(a, b) {
-  let alpha = Array.from(a).sort();
-  let beta = Array.from(b).sort();
-  let target = 0;
-  let c = "";
-  let d = "";
-  alpha.forEach((char) => {
-    if (!beta.includes(char)) {
-      target += 1;
-    } else {
-      c += char;
-    }
-  });
-  beta.forEach((char) => {
-    if (!alpha.includes(char)) {
-      target += 1;
-    } else {
-      d += char;
-    }
-  });
-  console.log(c);
-  console.log(d);
-  return target;
+let counter = (string) =>
+  string.reduce((tally, index) => {
+    tally[index] = (tally[index] || 0) + 1;
+    return tally;
+  }, {});
+export default function isAnagram(string1, string2) {
+  let str1 = counter(Array.from(string1));
+  let str2 = counter(Array.from(string2));
+  return str1;
 }
 
 console.log(makeAnagram("cde", "abc"));
 console.log(
   makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke")
+);
+
+console.log(
+  isAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke")
 );
