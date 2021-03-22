@@ -1,3 +1,9 @@
+/// Create a method(function) that counts true values in a mutable array.
+/// ```
+///let result = doccomments::count_true(&mut [true, true, false, false, true]);
+/// assert_eq!(result,3)
+/// ```
+
 pub fn count_true(arr: &mut [bool]) -> i32 {
     let mut num = 0;
     for value in arr {
