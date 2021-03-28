@@ -8,7 +8,7 @@ pub fn count_true(arr: &mut [bool]) -> i32 {
     let mut num = 0;
     for value in arr {
         if *value {
-            num = num + 1;
+            num += 1;
         }
     }
     num
