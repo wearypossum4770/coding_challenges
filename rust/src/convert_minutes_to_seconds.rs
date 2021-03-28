@@ -1,5 +1,5 @@
 pub fn convert_minutes_to_seconds(minutes: i32) -> i32 {
-    return minutes * 60;
+    minutes * 60
 }
 #[cfg(test)]
 mod tests {
