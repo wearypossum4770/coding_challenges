@@ -1,5 +1,5 @@
 pub fn convert_age_to_days(age: i32) -> i32 {
-    return age * 365;
+    age * 365
 }
 #[cfg(test)]
 mod tests {
