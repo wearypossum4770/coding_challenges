@@ -1,13 +1,5 @@
-// The function returns if the sum of two numbers is less than 100.
-// #Examples
-// ```
-// let five_plus_fifty_seven = doccomments::less_than_100(5,57);
-// assert_eq!(five_plus_fifty_seven, true);
-// ```
-
-//
-pub fn less_than_100(a: i32, b: i32) -> bool {
-    a + b < 100
+pub fn less_than_100(num1: i32, num2: i32) -> bool {
+    num1 + num2 < 100
 }
 #[cfg(test)]
 mod tests {
