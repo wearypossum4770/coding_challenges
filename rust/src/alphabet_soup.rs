@@ -5,7 +5,7 @@ pub fn alphabet_soup(input: &str) -> String {
             vec.push(c);
         }
     }
-    vec.sort();
+    vec.sort_unstable();
     let sorted: String = vec.into_iter().collect();
     sorted
 }
