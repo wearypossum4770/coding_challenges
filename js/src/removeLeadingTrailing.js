@@ -1,3 +1,1 @@
-export default function removeLeadingTrailing(string){
-    
-}
+export default function removeLeadingTrailing(string) {}
