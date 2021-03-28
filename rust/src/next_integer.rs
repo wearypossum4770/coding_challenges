@@ -1,8 +1,6 @@
 pub fn next_integer(num: i32) -> i32 {
-    let next = num + 1;
-    return next;
+    num + 1
 }
-
 #[cfg(test)]
 mod tests {
     use super::next_integer;
