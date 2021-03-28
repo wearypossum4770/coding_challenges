@@ -1,6 +1,6 @@
 use num_traits::pow;
 pub fn cubes(a: i64) -> i64 {
-    return pow(a, 3);
+    pow(a, 3)
 }
 
 #[cfg(test)]
