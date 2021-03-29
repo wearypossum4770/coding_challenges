@@ -4,12 +4,16 @@ use crate::addition::addition;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 // use crate::burglary_series::burglary_series;
-use crate::century_from_year::century_from_year;
+// use crate::century_from_year::century_from_year;
 use crate::convert_age_to_days::convert_age_to_days;
+
+use crate::convert_boolean_to_string::convert_boolean_to_string;
 use crate::convert_days_to_age::convert_days_to_age;
+use crate::convert_hour_minutes_to_seconds::convert_hour_minutes_to_seconds;
 use crate::convert_minutes_to_seconds::convert_minutes_to_seconds;
 use crate::count_true::count_true;
 use crate::cubes::cubes;
+use crate::football_points::football_points;
 use ferris_says::say;
 use std::collections::HashMap;
 use std::io::{stdout, BufWriter};
@@ -42,13 +46,16 @@ mod addition;
 mod alphabet_soup;
 mod animals;
 // mod burglary_series;
-mod century_from_year;
+// mod century_from_year;
 mod convert_age_to_days;
 mod convert_days_to_age;
+mod convert_boolean_to_string;
+mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
 mod count_true;
 mod cubes;
 mod find_perimeter;
+mod football_points;
 // mod find_duplicates;
 mod first_char;
 // mod fizz_buzz;
@@ -99,6 +106,7 @@ fn main() {
     let person = Person::new("Herman");
     let _array_boolean = vec![
         using_double_ampersand(true, true),
+        convert_boolean_to_string(true),
         less_than_100(3, 4),
         possible_bonus(3, 4),
         is_last_character_n("briaN"),
@@ -117,7 +125,11 @@ fn main() {
         convert_days_to_age(0),
         cubes(3),
     ];
-    let mut _array_u16 = vec![century_from_year(45)];
+    let mut _array_u16 = vec![
+        convert_hour_minutes_to_seconds(2, 3),
+        football_points(1, 2, 3),
+        // century_from_year(45)
+    ];
     let mut _array_u32 = vec![animals(2, 3, 4), tetrahedral_number(5)];
     let mut _array32 = vec![
         sum_polygon(3),
