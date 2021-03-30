@@ -146,7 +146,8 @@ fn main() {
         convert_minutes_to_seconds(30),
         convert_age_to_days(3),
     ];
-
+    let moderator_scores  = ("toxic", "severe_toxic", "obscence", "insult", "identity_hate");
+    println!("{:?}", moderator_scores);
     // println!("{:?}",_array_array);
     // println!("{:?}",_array_tuple);
     println!("{:?}", string_array);
