@@ -1,5 +1,5 @@
 pub fn convert_boolean_to_string(flag:bool)->String{
-    if flag == true{
+    if flag{
         "true".to_string()
     }else {
         "false".to_string()
