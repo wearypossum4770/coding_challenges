@@ -1,7 +1,7 @@
-pub fn convert_boolean_to_string(flag:bool)->String{
-    if flag{
+pub fn convert_boolean_to_string(flag: bool) -> String {
+    if flag {
         "true".to_string()
-    }else {
+    } else {
         "false".to_string()
     }
 }
@@ -12,5 +12,5 @@ mod tests {
     fn test_convert_boolean_to_string() {
         assert_eq!(convert_boolean_to_string(true), "true");
         assert_eq!(convert_boolean_to_string(false), "false");
-        }
+    }
 }

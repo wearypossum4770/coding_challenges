@@ -4,6 +4,7 @@ use crate::addition::addition;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 // use crate::burglary_series::burglary_series;
+use crate::calculate_fuel::calculate_fuel;
 // use crate::century_from_year::century_from_year;
 use crate::convert_age_to_days::convert_age_to_days;
 
@@ -47,10 +48,11 @@ mod addition;
 mod alphabet_soup;
 mod animals;
 // mod burglary_series;
+mod calculate_fuel;
 // mod century_from_year;
 mod convert_age_to_days;
-mod convert_days_to_age;
 mod convert_boolean_to_string;
+mod convert_days_to_age;
 mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
 mod count_true;
@@ -108,7 +110,7 @@ fn main() {
     ];
     let person = Person::new("Herman");
     let _array_boolean = vec![
-        is_same_number(2,3),
+        is_same_number(2, 3),
         using_double_ampersand(true, true),
         less_than_100(3, 4),
         possible_bonus(3, 4),
@@ -133,6 +135,7 @@ fn main() {
         football_points(1, 2, 3),
         // century_from_year(45)
     ];
+    let mut _array_f64 = vec![calculate_fuel(3.0)];
     let mut _array_u32 = vec![animals(2, 3, 4), tetrahedral_number(5)];
     let mut _array32 = vec![
         sum_polygon(3),
