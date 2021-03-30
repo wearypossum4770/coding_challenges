@@ -1,6 +1,9 @@
 pub fn convert_boolean_to_string(flag:bool)->String{
-    flag.into()
-
+    if flag == true{
+        "true".to_string()
+    }else {
+        "false".to_string()
+    }
 }
 #[cfg(test)]
 mod tests {
