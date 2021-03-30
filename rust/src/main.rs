@@ -25,6 +25,7 @@ use crate::get_first_value::get_first_value;
 use crate::give_me_something::give_me_something;
 use crate::hello::hello;
 use crate::is_last_character_n::is_last_character_n;
+use crate::is_same_number::is_same_number;
 use crate::less_than_100::less_than_100;
 use crate::maximum_wealth::maximum_wealth;
 use crate::name_string::name_string;
@@ -63,6 +64,7 @@ mod get_first_value;
 mod give_me_something;
 mod hello;
 mod is_last_character_n;
+mod is_same_number;
 mod less_than_100;
 mod maximum_wealth;
 mod name_string;
@@ -101,12 +103,13 @@ fn main() {
         remove_spaces("hello"),
         remove_first_char("hello"),
         hello("John Doe"),
+        convert_boolean_to_string(true),
         first_char("hello"),
     ];
     let person = Person::new("Herman");
     let _array_boolean = vec![
+        is_same_number(2,3),
         using_double_ampersand(true, true),
-        convert_boolean_to_string(true),
         less_than_100(3, 4),
         possible_bonus(3, 4),
         is_last_character_n("briaN"),
