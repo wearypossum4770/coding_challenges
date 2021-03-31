@@ -1,3 +1,3 @@
-export default function sumPolygon(n){
-return 180*(n-2)
+export default function sumPolygon(n) {
+  return 180 * (n - 2);
 }

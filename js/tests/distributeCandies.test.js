@@ -1,3 +1,1 @@
-import distributeCandies from '../src/distributeCandies/.js'
-
-
+import distributeCandies from "../src/distributeCandies/.js";

@@ -1,1 +1,1 @@
-import footballPoints from '../src.footballPoints.js'
+import footballPoints from "../src.footballPoints.js";

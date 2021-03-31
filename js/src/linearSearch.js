@@ -1,15 +1,11 @@
 const arrayToSearchThrough = [];
 for (let i = 1; i <= 1000; i++) {
-    arrayToSearchThrough.push(i);
+  arrayToSearchThrough.push(i);
 }
 
-export  function linearSearch(valueToFind, arrayToSearchThrough){
+export function linearSearch(valueToFind, arrayToSearchThrough) {}
 
-}
-
-export function linearSearchGlobal(valueToFind, arrayToSearchThrough){
-    
-}
+export function linearSearchGlobal(valueToFind, arrayToSearchThrough) {}
 
 /**const arrayToSearchThrough = [];
 for (let i = 1; i <= 1000; i++) {

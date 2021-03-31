@@ -1,3 +1,3 @@
-export default function convertBooleanToString(flag){
-    return flag?"true":"false"
+export default function convertBooleanToString(flag) {
+  return flag ? "true" : "false";
 }

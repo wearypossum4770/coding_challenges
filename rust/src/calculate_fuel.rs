@@ -21,7 +21,6 @@ mod tests {
         assert_eq!(calculate_fuel(822315322.0), 8223153220.0);
         assert_eq!(calculate_fuel(12345.6789), 123456.789);
         assert_eq!(calculate_fuel(31.41), 314.1);
-
         // Author: Joshua Señoron
     }
 }

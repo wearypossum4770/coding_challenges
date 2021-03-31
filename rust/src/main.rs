@@ -29,6 +29,7 @@ use crate::is_last_character_n::is_last_character_n;
 use crate::is_same_number::is_same_number;
 use crate::less_than_100::less_than_100;
 use crate::maximum_wealth::maximum_wealth;
+use crate::missing_number::missing_number;
 use crate::name_string::name_string;
 use crate::next_integer::next_integer;
 use crate::possible_bonus::possible_bonus;
@@ -69,6 +70,7 @@ mod is_last_character_n;
 mod is_same_number;
 mod less_than_100;
 mod maximum_wealth;
+mod missing_number;
 mod name_string;
 mod next_integer;
 mod possible_bonus;
@@ -136,7 +138,11 @@ fn main() {
         // century_from_year(45)
     ];
     let mut _array_f64 = vec![calculate_fuel(3.0)];
-    let mut _array_u32 = vec![animals(2, 3, 4), tetrahedral_number(5)];
+    let mut _array_u32 = vec![
+        missing_number(vec![1]),
+        animals(2, 3, 4),
+        tetrahedral_number(5),
+    ];
     let mut _array32 = vec![
         sum_polygon(3),
         count_true(&mut [true]),
