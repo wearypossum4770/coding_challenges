@@ -3,11 +3,16 @@ use crate::add_name::add_name;
 use crate::addition::addition;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
+use crate::array_of_multiples::array_of_multiples;
+use crate::date_challenge::date_challenge;
+use ferris_says::say;
+use std::collections::HashMap;
+use std::io::{stdout, BufWriter};
 // use crate::burglary_series::burglary_series;
 use crate::calculate_fuel::calculate_fuel;
 // use crate::century_from_year::century_from_year;
+use crate::check_palindrome::check_palindrome;
 use crate::convert_age_to_days::convert_age_to_days;
-
 use crate::convert_boolean_to_string::convert_boolean_to_string;
 use crate::convert_days_to_age::convert_days_to_age;
 use crate::convert_hour_minutes_to_seconds::convert_hour_minutes_to_seconds;
@@ -15,42 +20,51 @@ use crate::convert_minutes_to_seconds::convert_minutes_to_seconds;
 use crate::count_true::count_true;
 use crate::cubes::cubes;
 use crate::football_points::football_points;
-use ferris_says::say;
-use std::collections::HashMap;
-use std::io::{stdout, BufWriter};
 // use crate::find_duplicates::find_duplicates;
 use crate::find_perimeter::find_perimeter;
 use crate::first_char::first_char;
 // use crate::fizz_buzz::fizz_buzz;
+use crate::frames_per_second::frames_per_second;
 use crate::get_first_value::get_first_value;
 use crate::give_me_something::give_me_something;
 use crate::hello::hello;
+use crate::int_within_bounds::int_within_bounds;
 use crate::is_last_character_n::is_last_character_n;
 use crate::is_same_number::is_same_number;
+// use crate::keys_and_values::keys_and_values;
 use crate::less_than_100::less_than_100;
+use crate::makes_ten::makes_ten;
 use crate::maximum_wealth::maximum_wealth;
-use crate::missing_number::missing_number;
+// use crate::missing_number::missing_number;
 use crate::name_string::name_string;
 use crate::next_integer::next_integer;
+use crate::oddish_or_evenish::oddish_or_evenish;
 use crate::possible_bonus::possible_bonus;
 // use crate::read_slice::read_slice;
 // use crate::reduce_array::reduce_array;
+use crate::reduce_to_zero_steps::reduce_to_zero_steps;
 use crate::remove_first_char::remove_first_char;
 use crate::remove_spaces::remove_spaces;
 // use crate::reverse_words::reverse_words;
+use crate::seven_boom::seven_boom;
 use crate::shift_to_right::shift_to_right;
+use crate::smaller_numbers_than_current::smaller_numbers_than_current;
+use crate::subtract_product_and_sum::subtract_product_and_sum;
 use crate::sum_polygon::sum_polygon;
 use crate::tetrahedral_number::tetrahedral_number;
 // use crate::type_array::type_array;
 // use crate::type_tuple::type_tuple;
 use crate::using_double_ampersand::using_double_ampersand;
+use crate::years_in_one_house::years_in_one_house;
 mod add_name;
 mod addition;
 mod alphabet_soup;
 mod animals;
+mod array_of_multiples;
 // mod burglary_series;
 mod calculate_fuel;
 // mod century_from_year;
+mod check_palindrome;
 mod convert_age_to_days;
 mod convert_boolean_to_string;
 mod convert_days_to_age;
@@ -58,33 +72,46 @@ mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
 mod count_true;
 mod cubes;
+mod date_challenge;
 mod find_perimeter;
 mod football_points;
 // mod find_duplicates;
 mod first_char;
 // mod fizz_buzz;
+mod frames_per_second;
 mod get_first_value;
 mod give_me_something;
 mod hello;
+mod int_within_bounds;
 mod is_last_character_n;
 mod is_same_number;
+// mod keys_and_values;
 mod less_than_100;
+mod makes_ten;
 mod maximum_wealth;
-mod missing_number;
+// mod missing_number;
 mod name_string;
 mod next_integer;
+mod oddish_or_evenish;
 mod possible_bonus;
 // mod read_slice;
 // mod reduce_array;
+mod reduce_to_zero_steps;
 mod remove_first_char;
 mod remove_spaces;
 // mod reverse_words;
+mod seven_boom;
 mod shift_to_right;
+mod smaller_numbers_than_current;
+mod subtract_product_and_sum;
 mod sum_polygon;
 mod tetrahedral_number;
 // mod type_array;
 // mod type_tuple;
 mod using_double_ampersand;
+mod years_in_one_house;
+#[macro_use]
+extern crate maplit;
 #[derive(Debug)]
 struct Person {
     name: String,
@@ -95,6 +122,15 @@ impl Person {
     }
 }
 fn main() {
+    let map = hashmap! {
+        "a" => 1,
+        "b" => 2,
+    };
+    let mut second = HashMap::new();
+    second.insert("a", "Apple");
+    second.insert("b", "Microsoft");
+    second.insert("c", "Google");
+    date_challenge();
     let mut score = HashMap::new();
     score.insert("piano", 500);
     score.insert("stereo", 300);
@@ -112,6 +148,9 @@ fn main() {
     ];
     let person = Person::new("Herman");
     let _array_boolean = vec![
+        check_palindrome("A"),
+        makes_ten(10, 1),
+        int_within_bounds(1, 2, 3),
         is_same_number(2, 3),
         using_double_ampersand(true, true),
         less_than_100(3, 4),
@@ -120,31 +159,40 @@ fn main() {
     ];
     let _array_strings = vec![
         give_me_something(""),
+        seven_boom(vec![2]),
         alphabet_soup("hello"),
         name_string("Henry"),
     ];
     // let mut _array_array = vec![type_array()];
     // let mut _array_tuple = vec![type_tuple()];
-    let mut _array64 = vec![
+    let mut _array_u8 = vec![years_in_one_house(30, 0)];
+    let mut _array_u64 = vec![reduce_to_zero_steps(14)];
+    let mut _array_i64 = vec![
         find_perimeter(6, 7),
         maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]),
         get_first_value(vec![4, 5, 6]),
         convert_days_to_age(0),
         cubes(3),
     ];
+    let mut _array_vectors = vec![array_of_multiples(2, 3)];
+    let mut _array_u32_vectors = vec![
+        2, 3, // keys_and_values(second)
+    ];
     let mut _array_u16 = vec![
         convert_hour_minutes_to_seconds(2, 3),
         football_points(1, 2, 3),
-        // century_from_year(45)
+        // century_from_year(450),
     ];
     let mut _array_f64 = vec![calculate_fuel(3.0)];
     let mut _array_u32 = vec![
-        missing_number(vec![1]),
+        // missing_number(vec![1]),
+        frames_per_second(1, 2),
         animals(2, 3, 4),
         tetrahedral_number(5),
     ];
-    let mut _array32 = vec![
+    let mut _array_i32 = vec![
         sum_polygon(3),
+        subtract_product_and_sum(32),
         count_true(&mut [true]),
         shift_to_right(2, 3),
         next_integer(1),
@@ -152,15 +200,28 @@ fn main() {
         convert_minutes_to_seconds(30),
         convert_age_to_days(3),
     ];
-    let moderator_scores  = ("toxic", "severe_toxic", "obscence", "insult", "identity_hate");
+    let moderator_scores = (
+        "toxic",
+        "severe_toxic",
+        "obscence",
+        "insult",
+        "identity_hate",
+    );
+    println!("{:?}", person);
+    println!("{:?}", score);
     println!("{:?}", moderator_scores);
     // println!("{:?}",_array_array);
     // println!("{:?}",_array_tuple);
     println!("{:?}", string_array);
-    println!("{:?}", person);
-    println!("{:?}", _array64);
-    println!("{:?}", _array32);
-    println!("{:?}", score);
+    println!("{:?}", _array_i64);
+    println!("{:?}", _array_i32);
     println!("{:?}", _array_u32);
+    println!("{:?}", _array_u64);
+    println!("{:?}", _array_u8);
+    println!("{:?}", _array_vectors);
+    println!("{:?}", _array_u32_vectors);
+    println!("{:?}", map);
+    println!("{:?}", smaller_numbers_than_current(&[8, 1, 2, 2, 3]));
+    println!("{:?}", oddish_or_evenish(123));
     say(out, width, &mut writer).unwrap();
 }

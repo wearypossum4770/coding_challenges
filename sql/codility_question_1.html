@@ -1,54 +1,59 @@
-<div class="task-description__TaskContentWrapper-sc-380ibo-1 dkOeXd task-description-content">
+<div
+  class="task-description__TaskContentWrapper-sc-380ibo-1 dkOeXd task-description-content"
+>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
-    
-    <div class="brinza-task-description">
-    <p>Given a table <tt style="white-space:pre-wrap">invoice_items</tt> with the following structure:</p>
-    <tt style="white-space:pre-wrap">  create table invoice_items (
-          inv_num integer not null,
-          item varchar(10) not null,
-          price integer not null
-      );</tt>
-    <p>write an SQL query that returns a list of invoices (<tt style="white-space:pre-wrap">inv_num</tt>) with the total price of each (<tt style="white-space:pre-wrap">sum</tt>). The list should be ordered by <tt style="white-space:pre-wrap">inv_num</tt> (in descending order).</p>
+  <div class="brinza-task-description">
+    <p>
+      Given a table <tt style="white-space: pre-wrap">invoice_items</tt> with
+      the following structure:
+    </p>
+    <tt style="white-space: pre-wrap">
+      create table invoice_items ( inv_num integer not null, item varchar(10)
+      not null, price integer not null );</tt
+    >
+    <p>
+      write an SQL query that returns a list of invoices (<tt
+        style="white-space: pre-wrap"
+        >inv_num</tt
+      >) with the total price of each (<tt style="white-space: pre-wrap">sum</tt
+      >). The list should be ordered by
+      <tt style="white-space: pre-wrap">inv_num</tt> (in descending order).
+    </p>
     <p><b>Examples:</b></p>
     <p>1. Given:</p>
-    <tt style="white-space:pre-wrap">  inv_num | item | price
-      --------+------+------
-      3       | a    | 10
-      3       | b    | 15
-      1       | c    | 7</tt>
+    <tt style="white-space: pre-wrap">
+      inv_num | item | price --------+------+------ 3 | a | 10 3 | b | 15 1 | c
+      | 7</tt
+    >
     <p>your query should return:</p>
-    <tt style="white-space:pre-wrap">  inv_num | sum
-      --------+----
-      3       | 25
-      1       | 7</tt>
+    <tt style="white-space: pre-wrap">
+      inv_num | sum --------+---- 3 | 25 1 | 7</tt
+    >
     <p>2. Given:</p>
-    <tt style="white-space:pre-wrap">  inv_num | item | price
-      --------+------+------
-      10      | A    | 13
-      11      | C    | 20
-      11      | D    | 4
-      12      | D    | 4
-      12      | D    | 4</tt>
+    <tt style="white-space: pre-wrap">
+      inv_num | item | price --------+------+------ 10 | A | 13 11 | C | 20 11 |
+      D | 4 12 | D | 4 12 | D | 4</tt
+    >
     <p>your query should return:</p>
-    <tt style="white-space:pre-wrap">  inv_num | sum
-      --------+----
-      12      | 8
-      11      | 24
-      10      | 13</tt>
-    </div>
-    <div style="margin-top:5px">
-    <small>Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.</small>
-    </div>
-    
-    </div>
+    <tt style="white-space: pre-wrap">
+      inv_num | sum --------+---- 12 | 8 11 | 24 10 | 13</tt
+    >
+  </div>
+  <div style="margin-top: 5px">
+    <small
+      >Copyright 2009–2021 by Codility Limited. All Rights Reserved.
+      Unauthorized copying, publication or disclosure prohibited.</small
+    >
+  </div>
+</div>
 
-    <div>
-        my solution 
-        <samp>
-            <code>
-                SELECT  inv_num, Sum(price) as sum from invoice_items group by inv_num order by inv_num desc;
-            </code>
-        </samp>
-    </div>
+<div>
+  my solution
+  <samp>
+    <code>
+      SELECT inv_num, Sum(price) as sum from invoice_items group by inv_num
+      order by inv_num desc;
+    </code>
+  </samp>
+</div>

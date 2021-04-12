@@ -1,7 +1,9 @@
 export default function almostIncreasingSequence(sequence) {
   let target = 0;
-  let array = new Set();
-  for (let index = 0; index < sequence.length; index++) {}
+  let array = [...sequence].sort((a,b)=>a-b);
+  for (let index = 0; index < sequence.length; index++) {
+  }
+console.log(target)
   return array;
 }
 

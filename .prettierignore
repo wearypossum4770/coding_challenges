@@ -6,4 +6,4 @@ target
 # Ignore all go mod files:
 *.mod
 # Ignore all HTML files:
-*.html
+# *.html

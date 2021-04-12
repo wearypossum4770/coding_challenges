@@ -1,8 +1,8 @@
-pub fn missing_number(arr: Vec<u32>)->usize{
-    let length:u32 = arr.len();
+pub fn missing_number(arr: Vec<u32>)->u32{
+    let length:u32 = arr.len().try_into().unwrap();
     
-if arr[arr.len()-1] == arr.len(){
-    arr.len()
+if arr[arr.len()-1] == length{
+    length
 }else{
 //  if arr[0] != 0{
     0
