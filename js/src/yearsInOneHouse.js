@@ -1,3 +1,1 @@
-export default function yearsInOneHouse(age, houses){
-    
-}
+export default function yearsInOneHouse(age, houses) {}

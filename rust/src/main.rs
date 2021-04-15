@@ -1,6 +1,9 @@
+// jankines8@gmail.com
+// bpb-dLwK6Nwb75k
 extern crate ferris_says;
 use crate::add_name::add_name;
 use crate::addition::addition;
+use crate::adjacent_elements_product::adjacent_elements_product;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 use crate::array_of_multiples::array_of_multiples;
@@ -30,34 +33,42 @@ use crate::give_me_something::give_me_something;
 use crate::hello::hello;
 use crate::int_within_bounds::int_within_bounds;
 use crate::is_last_character_n::is_last_character_n;
+use crate::is_rep_digit::is_rep_digit;
 use crate::is_same_number::is_same_number;
 // use crate::keys_and_values::keys_and_values;
 use crate::less_than_100::less_than_100;
+use crate::letter_combinations::letter_combinations;
 use crate::makes_ten::makes_ten;
 use crate::maximum_wealth::maximum_wealth;
+use crate::min_operations::min_operations;
 // use crate::missing_number::missing_number;
 use crate::name_string::name_string;
 use crate::next_integer::next_integer;
 use crate::oddish_or_evenish::oddish_or_evenish;
 use crate::possible_bonus::possible_bonus;
+use crate::profitable_gamble::profitable_gamble;
 // use crate::read_slice::read_slice;
 // use crate::reduce_array::reduce_array;
 use crate::reduce_to_zero_steps::reduce_to_zero_steps;
 use crate::remove_first_char::remove_first_char;
 use crate::remove_spaces::remove_spaces;
+use crate::return_negative::return_negative;
 // use crate::reverse_words::reverse_words;
+// use crate::reverse_array::reverse_array;
 use crate::seven_boom::seven_boom;
 use crate::shift_to_right::shift_to_right;
 use crate::smaller_numbers_than_current::smaller_numbers_than_current;
 use crate::subtract_product_and_sum::subtract_product_and_sum;
 use crate::sum_polygon::sum_polygon;
 use crate::tetrahedral_number::tetrahedral_number;
+use crate::triangular_numbers::triangular_numbers;
 // use crate::type_array::type_array;
 // use crate::type_tuple::type_tuple;
 use crate::using_double_ampersand::using_double_ampersand;
 use crate::years_in_one_house::years_in_one_house;
 mod add_name;
 mod addition;
+mod adjacent_elements_product;
 mod alphabet_soup;
 mod animals;
 mod array_of_multiples;
@@ -84,21 +95,27 @@ mod give_me_something;
 mod hello;
 mod int_within_bounds;
 mod is_last_character_n;
+mod is_rep_digit;
 mod is_same_number;
 // mod keys_and_values;
 mod less_than_100;
+mod letter_combinations;
 mod makes_ten;
 mod maximum_wealth;
+mod min_operations;
 // mod missing_number;
 mod name_string;
 mod next_integer;
 mod oddish_or_evenish;
 mod possible_bonus;
+mod profitable_gamble;
 // mod read_slice;
 // mod reduce_array;
 mod reduce_to_zero_steps;
 mod remove_first_char;
 mod remove_spaces;
+mod return_negative;
+// mod reverse_array;
 // mod reverse_words;
 mod seven_boom;
 mod shift_to_right;
@@ -106,6 +123,7 @@ mod smaller_numbers_than_current;
 mod subtract_product_and_sum;
 mod sum_polygon;
 mod tetrahedral_number;
+mod triangular_numbers;
 // mod type_array;
 // mod type_tuple;
 mod using_double_ampersand;
@@ -148,7 +166,9 @@ fn main() {
     ];
     let person = Person::new("Herman");
     let _array_boolean = vec![
+        profitable_gamble(1.0, 2, 1.0),
         check_palindrome("A"),
+        is_rep_digit(22),
         makes_ten(10, 1),
         int_within_bounds(1, 2, 3),
         is_same_number(2, 3),
@@ -176,6 +196,7 @@ fn main() {
     ];
     let mut _array_vectors = vec![array_of_multiples(2, 3)];
     let mut _array_u32_vectors = vec![
+        // reverse_array(&[3, 2, 1]),
         2, 3, // keys_and_values(second)
     ];
     let mut _array_u16 = vec![
@@ -191,6 +212,10 @@ fn main() {
         tetrahedral_number(5),
     ];
     let mut _array_i32 = vec![
+        triangular_numbers(2),
+        min_operations(3),
+        return_negative(1),
+        adjacent_elements_product(&[3, 6, -2, -5, 7, 3]),
         sum_polygon(3),
         subtract_product_and_sum(32),
         count_true(&mut [true]),
@@ -221,6 +246,7 @@ fn main() {
     println!("{:?}", _array_vectors);
     println!("{:?}", _array_u32_vectors);
     println!("{:?}", map);
+    println!("{:?}", letter_combinations("2"));
     println!("{:?}", smaller_numbers_than_current(&[8, 1, 2, 2, 3]));
     println!("{:?}", oddish_or_evenish(123));
     say(out, width, &mut writer).unwrap();

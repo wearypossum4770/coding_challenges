@@ -1,3 +1,1 @@
-export default function countBoomerangs(arr) {
-	
-}
+export default function countBoomerangs(arr) {}
