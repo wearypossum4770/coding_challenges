@@ -3,7 +3,7 @@
 extern crate ferris_says;
 use crate::add_name::add_name;
 use crate::addition::addition;
-use crate::adjacent_elements_product::adjacent_elements_product;
+// use crate::adjacent_elements_product::adjacent_elements_product;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 use crate::array_of_multiples::array_of_multiples;
@@ -57,6 +57,7 @@ use crate::return_negative::return_negative;
 // use crate::reverse_array::reverse_array;
 use crate::seven_boom::seven_boom;
 use crate::shift_to_right::shift_to_right;
+// use crate::shuffle_string::shuffle_string;
 use crate::smaller_numbers_than_current::smaller_numbers_than_current;
 use crate::subtract_product_and_sum::subtract_product_and_sum;
 use crate::sum_polygon::sum_polygon;
@@ -68,7 +69,7 @@ use crate::using_double_ampersand::using_double_ampersand;
 use crate::years_in_one_house::years_in_one_house;
 mod add_name;
 mod addition;
-mod adjacent_elements_product;
+// mod adjacent_elements_product;
 mod alphabet_soup;
 mod animals;
 mod array_of_multiples;
@@ -119,6 +120,7 @@ mod return_negative;
 // mod reverse_words;
 mod seven_boom;
 mod shift_to_right;
+// mod shuffle_string;
 mod smaller_numbers_than_current;
 mod subtract_product_and_sum;
 mod sum_polygon;
@@ -156,6 +158,53 @@ fn main() {
     let out = b"Hello World!";
     let width = 24;
     let mut writer = BufWriter::new(stdout());
+    let mut _array_i32 = vec![
+        triangular_numbers(2),
+        min_operations(3),
+        return_negative(1),
+        // adjacent_elements_product(&[3, 6, -2, -5, 7, 3]),
+        sum_polygon(3),
+        subtract_product_and_sum(32),
+        count_true(&mut [true]),
+        shift_to_right(2, 3),
+        next_integer(1),
+        addition(2, 3),
+        convert_minutes_to_seconds(30),
+        convert_age_to_days(3),
+    ];
+    let mut _array_i64 = vec![
+        find_perimeter(6, 7),
+        maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]),
+        get_first_value(vec![4, 5, 6]),
+        convert_days_to_age(0),
+        cubes(3),
+    ];
+    let mut _array_f64 = vec![calculate_fuel(3.0)];
+    let mut _array_u8 = vec![years_in_one_house(30, 0)];
+    let mut _array_u16 = vec![
+        convert_hour_minutes_to_seconds(2, 3),
+        football_points(1, 2, 3),
+        // century_from_year(450),
+    ];
+    let mut _array_u32 = vec![
+        // missing_number(vec![1]),
+        frames_per_second(1, 2),
+        animals(2, 3, 4),
+        tetrahedral_number(5),
+    ];
+    let mut _array_u64 = vec![reduce_to_zero_steps(14)];
+    let mut _array_vectors = vec![array_of_multiples(2, 3)];
+    let mut _array_u32_vectors = vec![
+        // reverse_array(&[3, 2, 1]),
+        2, 3, // keys_and_values(second)
+    ];
+    let moderator_scores = (
+        "toxic",
+        "severe_toxic",
+        "obscence",
+        "insult",
+        "identity_hate",
+    );
     let mut _array_objects = vec![add_name("Blue", 42)];
     let string_array = vec![
         remove_spaces("hello"),
@@ -178,6 +227,7 @@ fn main() {
         is_last_character_n("briaN"),
     ];
     let _array_strings = vec![
+        // shuffle_string("art", &[1, 0, 2]),
         give_me_something(""),
         seven_boom(vec![2]),
         alphabet_soup("hello"),
@@ -185,53 +235,6 @@ fn main() {
     ];
     // let mut _array_array = vec![type_array()];
     // let mut _array_tuple = vec![type_tuple()];
-    let mut _array_u8 = vec![years_in_one_house(30, 0)];
-    let mut _array_u64 = vec![reduce_to_zero_steps(14)];
-    let mut _array_i64 = vec![
-        find_perimeter(6, 7),
-        maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]),
-        get_first_value(vec![4, 5, 6]),
-        convert_days_to_age(0),
-        cubes(3),
-    ];
-    let mut _array_vectors = vec![array_of_multiples(2, 3)];
-    let mut _array_u32_vectors = vec![
-        // reverse_array(&[3, 2, 1]),
-        2, 3, // keys_and_values(second)
-    ];
-    let mut _array_u16 = vec![
-        convert_hour_minutes_to_seconds(2, 3),
-        football_points(1, 2, 3),
-        // century_from_year(450),
-    ];
-    let mut _array_f64 = vec![calculate_fuel(3.0)];
-    let mut _array_u32 = vec![
-        // missing_number(vec![1]),
-        frames_per_second(1, 2),
-        animals(2, 3, 4),
-        tetrahedral_number(5),
-    ];
-    let mut _array_i32 = vec![
-        triangular_numbers(2),
-        min_operations(3),
-        return_negative(1),
-        adjacent_elements_product(&[3, 6, -2, -5, 7, 3]),
-        sum_polygon(3),
-        subtract_product_and_sum(32),
-        count_true(&mut [true]),
-        shift_to_right(2, 3),
-        next_integer(1),
-        addition(2, 3),
-        convert_minutes_to_seconds(30),
-        convert_age_to_days(3),
-    ];
-    let moderator_scores = (
-        "toxic",
-        "severe_toxic",
-        "obscence",
-        "insult",
-        "identity_hate",
-    );
     println!("{:?}", person);
     println!("{:?}", score);
     println!("{:?}", moderator_scores);

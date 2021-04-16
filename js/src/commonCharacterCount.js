@@ -7,6 +7,8 @@
  *  @param {string} s2 - string of lower cased characters
  */
 export default function commonCharacterCount(s1, s2) {
+  let count = 0;
+let common = new Set((s1+s2))
   /**
    *  @method counter
    *  @param {string} str - lowercased string
@@ -19,6 +21,8 @@ export default function commonCharacterCount(s1, s2) {
     }, {});
   let first = counter(s1),
     second = counter(s2);
+
+return common
   console.log(first);
   console.log(second);
 }

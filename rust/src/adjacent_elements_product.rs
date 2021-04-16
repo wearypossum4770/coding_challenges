@@ -3,8 +3,13 @@
 ///
 #[allow(dead_code)]
 pub fn adjacent_elements_product(arr: &[i32]) -> i32 {
-    let product = 21i32;
-    product
+    let mut target = arr[0]*arr[1];
+    let mut product = 0i32;
+    for num in arr{
+        product=*num;
+        println!("{:?}",product);
+    }
+    target
 }
 #[cfg(test)]
 mod tests {
