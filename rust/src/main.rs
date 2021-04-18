@@ -3,6 +3,7 @@
 extern crate ferris_says;
 use crate::add_name::add_name;
 use crate::addition::addition;
+use crate::probability_density::probability_density;
 // use crate::adjacent_elements_product::adjacent_elements_product;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
@@ -69,6 +70,7 @@ use crate::using_double_ampersand::using_double_ampersand;
 use crate::years_in_one_house::years_in_one_house;
 mod add_name;
 mod addition;
+mod probability_density;
 // mod adjacent_elements_product;
 mod alphabet_soup;
 mod animals;
@@ -179,6 +181,7 @@ fn main() {
         convert_days_to_age(0),
         cubes(3),
     ];
+    let mut _array_f32 = vec![probability_density(64, 74)];
     let mut _array_f64 = vec![calculate_fuel(3.0)];
     let mut _array_u8 = vec![years_in_one_house(30, 0)];
     let mut _array_u16 = vec![
