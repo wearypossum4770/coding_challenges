@@ -7,6 +7,7 @@ use crate::addition::addition;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 use crate::array_of_multiples::array_of_multiples;
+use crate::create_target_array::create_target_array;
 use crate::date_challenge::date_challenge;
 use ferris_says::say;
 use std::collections::HashMap;
@@ -83,6 +84,7 @@ mod convert_days_to_age;
 mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
 mod count_true;
+mod create_target_array;
 mod cubes;
 mod date_challenge;
 mod find_perimeter;
@@ -195,6 +197,7 @@ fn main() {
     ];
     let mut _array_u64 = vec![reduce_to_zero_steps(14)];
     let mut _array_vectors = vec![array_of_multiples(2, 3)];
+    let mut _array_i32_vectors = vec![create_target_array(&[0, 1, 2, 3, 4], &[0, 1, 2, 2, 1])];
     let mut _array_u32_vectors = vec![
         // reverse_array(&[3, 2, 1]),
         2, 3, // keys_and_values(second)
