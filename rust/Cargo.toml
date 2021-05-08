@@ -20,3 +20,6 @@ chrono = "*"
 tokio = "*"
 pdfshrink = "*"
 maplit = "*"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+serde = "1.0"
