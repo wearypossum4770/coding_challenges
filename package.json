@@ -19,7 +19,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --watch --config ./.jest.config.mjs",
-    "pretty": " node --max-old-space-size=6144  node_modules/.bin/prettier --write . ",    "lint": "",
+    "pretty": " node --max-old-space-size=6144  node_modules/.bin/prettier --write . ",
+    "lint": "",
     "pretty:rust": "node ./cleaner.js && yarn pretty",
     "new": "node ./cleaner.js && node ./new_module.js"
   },

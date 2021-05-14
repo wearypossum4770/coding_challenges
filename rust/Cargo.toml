@@ -6,6 +6,7 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
+reqwest = "*"
 tokio-tungstenite = "*"
 jemallocator = "*"
 num-traits = "*"
@@ -20,3 +21,6 @@ chrono = "*"
 tokio = "*"
 pdfshrink = "*"
 maplit = "*"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+serde = "1.0"

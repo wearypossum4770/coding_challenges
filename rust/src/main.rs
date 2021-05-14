@@ -3,11 +3,11 @@
 extern crate ferris_says;
 use crate::add_name::add_name;
 use crate::addition::addition;
-use crate::probability_density::probability_density;
 // use crate::adjacent_elements_product::adjacent_elements_product;
 use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 use crate::array_of_multiples::array_of_multiples;
+use crate::ascending_descending_none::ascending_descending_none;
 use crate::date_challenge::date_challenge;
 use ferris_says::say;
 use std::collections::HashMap;
@@ -15,12 +15,14 @@ use std::io::{stdout, BufWriter};
 // use crate::burglary_series::burglary_series;
 use crate::calculate_fuel::calculate_fuel;
 // use crate::century_from_year::century_from_year;
+use crate::check_if_pangram::check_if_pangram;
 use crate::check_palindrome::check_palindrome;
 use crate::convert_age_to_days::convert_age_to_days;
 use crate::convert_boolean_to_string::convert_boolean_to_string;
 use crate::convert_days_to_age::convert_days_to_age;
 use crate::convert_hour_minutes_to_seconds::convert_hour_minutes_to_seconds;
 use crate::convert_minutes_to_seconds::convert_minutes_to_seconds;
+use crate::count_matches::count_matches;
 use crate::count_true::count_true;
 use crate::cubes::cubes;
 use crate::football_points::football_points;
@@ -33,18 +35,21 @@ use crate::get_first_value::get_first_value;
 use crate::give_me_something::give_me_something;
 use crate::hello::hello;
 use crate::int_within_bounds::int_within_bounds;
+use crate::is_even::is_even;
 use crate::is_last_character_n::is_last_character_n;
 use crate::is_rep_digit::is_rep_digit;
 use crate::is_same_number::is_same_number;
 // use crate::keys_and_values::keys_and_values;
 use crate::less_than_100::less_than_100;
 use crate::letter_combinations::letter_combinations;
+use crate::make_pair::make_pair;
 use crate::makes_ten::makes_ten;
 use crate::maximum_wealth::maximum_wealth;
 use crate::min_operations::min_operations;
 // use crate::missing_number::missing_number;
 use crate::name_string::name_string;
 use crate::next_integer::next_integer;
+use crate::nth_even::nth_even;
 use crate::oddish_or_evenish::oddish_or_evenish;
 use crate::possible_bonus::possible_bonus;
 use crate::profitable_gamble::profitable_gamble;
@@ -70,20 +75,22 @@ use crate::using_double_ampersand::using_double_ampersand;
 use crate::years_in_one_house::years_in_one_house;
 mod add_name;
 mod addition;
-mod probability_density;
 // mod adjacent_elements_product;
 mod alphabet_soup;
 mod animals;
 mod array_of_multiples;
+mod ascending_descending_none;
 // mod burglary_series;
 mod calculate_fuel;
 // mod century_from_year;
+mod check_if_pangram;
 mod check_palindrome;
 mod convert_age_to_days;
 mod convert_boolean_to_string;
 mod convert_days_to_age;
 mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
+mod count_matches;
 mod count_true;
 mod cubes;
 mod date_challenge;
@@ -97,18 +104,21 @@ mod get_first_value;
 mod give_me_something;
 mod hello;
 mod int_within_bounds;
+mod is_even;
 mod is_last_character_n;
 mod is_rep_digit;
 mod is_same_number;
 // mod keys_and_values;
 mod less_than_100;
 mod letter_combinations;
+mod make_pair;
 mod makes_ten;
 mod maximum_wealth;
 mod min_operations;
 // mod missing_number;
 mod name_string;
 mod next_integer;
+mod nth_even;
 mod oddish_or_evenish;
 mod possible_bonus;
 mod profitable_gamble;
@@ -144,6 +154,18 @@ impl Person {
     }
 }
 fn main() {
+    println!(
+        "{:?}",
+        count_matches(
+            &[
+                ["phone", "blue", "pixel"],
+                ["computer", "silver", "phone"],
+                ["phone", "gold", "iphone"]
+            ],
+            "type",
+            "phone"
+        )
+    );
     let map = hashmap! {
         "a" => 1,
         "b" => 2,
@@ -163,6 +185,7 @@ fn main() {
     let mut _array_i32 = vec![
         triangular_numbers(2),
         min_operations(3),
+        nth_even(0),
         return_negative(1),
         // adjacent_elements_product(&[3, 6, -2, -5, 7, 3]),
         sum_polygon(3),
@@ -181,7 +204,7 @@ fn main() {
         convert_days_to_age(0),
         cubes(3),
     ];
-    let mut _array_f32 = vec![probability_density(64, 74)];
+    // let mut _array_f32 = vec![];
     let mut _array_f64 = vec![calculate_fuel(3.0)];
     let mut _array_u8 = vec![years_in_one_house(30, 0)];
     let mut _array_u16 = vec![
@@ -195,11 +218,13 @@ fn main() {
         animals(2, 3, 4),
         tetrahedral_number(5),
     ];
+    let mut _array_i32_size_2 = [make_pair(1, 2)];
     let mut _array_u64 = vec![reduce_to_zero_steps(14)];
-    let mut _array_vectors = vec![array_of_multiples(2, 3)];
+    let mut _array_i32_vectors = vec![ascending_descending_none(&[4, 3, 2, 1], "Asc")];
     let mut _array_u32_vectors = vec![
+        array_of_multiples(2, 3),
         // reverse_array(&[3, 2, 1]),
-        2, 3, // keys_and_values(second)
+        // keys_and_values(second)
     ];
     let moderator_scores = (
         "toxic",
@@ -220,6 +245,8 @@ fn main() {
     let _array_boolean = vec![
         profitable_gamble(1.0, 2, 1.0),
         check_palindrome("A"),
+        is_even(2),
+        check_if_pangram("a"),
         is_rep_digit(22),
         makes_ten(10, 1),
         int_within_bounds(1, 2, 3),
@@ -249,9 +276,10 @@ fn main() {
     println!("{:?}", _array_u32);
     println!("{:?}", _array_u64);
     println!("{:?}", _array_u8);
-    println!("{:?}", _array_vectors);
+    println!("{:?}", _array_i32_vectors);
     println!("{:?}", _array_u32_vectors);
     println!("{:?}", map);
+    println!("{:?}", _array_i32_size_2);
     println!("{:?}", letter_combinations("2"));
     println!("{:?}", smaller_numbers_than_current(&[8, 1, 2, 2, 3]));
     println!("{:?}", oddish_or_evenish(123));

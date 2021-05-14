@@ -1,4 +1,3 @@
-export default function howManyWalls(n, w, h){
-    return n/ (w*h)
+export default function howManyWalls(n, w, h) {
+  return n / (w * h);
 }
-
