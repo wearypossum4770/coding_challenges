@@ -8,6 +8,7 @@ use crate::alphabet_soup::alphabet_soup;
 use crate::animals::animals;
 use crate::array_of_multiples::array_of_multiples;
 use crate::ascending_descending_none::ascending_descending_none;
+use crate::create_target_array::create_target_array;
 use crate::date_challenge::date_challenge;
 use ferris_says::say;
 use std::collections::HashMap;
@@ -23,13 +24,15 @@ use crate::convert_days_to_age::convert_days_to_age;
 use crate::convert_hour_minutes_to_seconds::convert_hour_minutes_to_seconds;
 use crate::convert_minutes_to_seconds::convert_minutes_to_seconds;
 use crate::count_matches::count_matches;
+use crate::count_characters::count_characters;
 use crate::count_true::count_true;
 use crate::cubes::cubes;
+use crate::factorial::factorial;
 use crate::football_points::football_points;
 // use crate::find_duplicates::find_duplicates;
 use crate::find_perimeter::find_perimeter;
 use crate::first_char::first_char;
-// use crate::fizz_buzz::fizz_buzz;
+use crate::fizz_buzz::fizz_buzz;
 use crate::frames_per_second::frames_per_second;
 use crate::get_first_value::get_first_value;
 use crate::give_me_something::give_me_something;
@@ -51,6 +54,7 @@ use crate::name_string::name_string;
 use crate::next_integer::next_integer;
 use crate::nth_even::nth_even;
 use crate::oddish_or_evenish::oddish_or_evenish;
+use crate::pad_array::pad_array;
 use crate::possible_bonus::possible_bonus;
 use crate::profitable_gamble::profitable_gamble;
 // use crate::read_slice::read_slice;
@@ -91,13 +95,17 @@ mod convert_days_to_age;
 mod convert_hour_minutes_to_seconds;
 mod convert_minutes_to_seconds;
 mod count_matches;
+mod count_characters;
 mod count_true;
+mod create_target_array;
 mod cubes;
 mod date_challenge;
+mod factorial;
 mod find_perimeter;
 mod football_points;
 // mod find_duplicates;
 mod first_char;
+mod fizz_buzz;
 // mod fizz_buzz;
 mod frames_per_second;
 mod get_first_value;
@@ -120,6 +128,7 @@ mod name_string;
 mod next_integer;
 mod nth_even;
 mod oddish_or_evenish;
+mod pad_array;
 mod possible_bonus;
 mod profitable_gamble;
 // mod read_slice;
@@ -153,6 +162,7 @@ impl Person {
         Person { name: name.into() }
     }
 }
+
 fn main() {
     println!(
         "{:?}",
@@ -214,6 +224,7 @@ fn main() {
     ];
     let mut _array_u32 = vec![
         // missing_number(vec![1]),
+        count_characters("aaabbc", "a"),
         frames_per_second(1, 2),
         animals(2, 3, 4),
         tetrahedral_number(5),
@@ -221,6 +232,11 @@ fn main() {
     let mut _array_i32_size_2 = [make_pair(1, 2)];
     let mut _array_u64 = vec![reduce_to_zero_steps(14)];
     let mut _array_i32_vectors = vec![ascending_descending_none(&[4, 3, 2, 1], "Asc")];
+    let mut _array_str = vec![pad_array(&[1, 2], 5, "apples")];
+    let mut _array_u128 = vec![factorial(34)];
+    let mut _array_u64 = vec![reduce_to_zero_steps(14)];
+    let mut _array_vectors = vec![array_of_multiples(2, 3)];
+    let mut _array_i32_vectors = vec![create_target_array(&[0, 1, 2, 3, 4], &[0, 1, 2, 2, 1])];
     let mut _array_u32_vectors = vec![
         array_of_multiples(2, 3),
         // reverse_array(&[3, 2, 1]),
@@ -271,12 +287,16 @@ fn main() {
     // println!("{:?}",_array_array);
     // println!("{:?}",_array_tuple);
     println!("{:?}", string_array);
+    println!("{:?}", _array_str);
     println!("{:?}", _array_i64);
     println!("{:?}", _array_i32);
+    println!("{:?}", _array_u8);
     println!("{:?}", _array_u32);
     println!("{:?}", _array_u64);
     println!("{:?}", _array_u8);
     println!("{:?}", _array_i32_vectors);
+    println!("{:?}", _array_u128);
+    println!("{:?}", _array_vectors);
     println!("{:?}", _array_u32_vectors);
     println!("{:?}", map);
     println!("{:?}", _array_i32_size_2);
@@ -284,4 +304,5 @@ fn main() {
     println!("{:?}", smaller_numbers_than_current(&[8, 1, 2, 2, 3]));
     println!("{:?}", oddish_or_evenish(123));
     say(out, width, &mut writer).unwrap();
+    fizz_buzz(3);
 }
