@@ -109,3 +109,8 @@ class ProfileUpdateForm(ModelForm):
             "image",
             "addresses",
         )
+
+class QualifyingChildForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)

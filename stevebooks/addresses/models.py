@@ -1,10 +1,7 @@
 from cuid import cuid
-from django.db.models import (
-    CharField,
-    Model,
-    TextChoices,
-)
+from django.db.models import CharField, Model, TextChoices
 from django.utils.translation import gettext_lazy as _
+
 
 class Address(Model):
     class State(TextChoices):
@@ -84,4 +81,3 @@ class Address(Model):
 
     def __str__(self):
         return f" {self.street1}  {self.city},  {self.state}  {self.zipcode}"
-
