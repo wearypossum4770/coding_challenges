@@ -1,4 +1,5 @@
 /**
+ * 1773.
  * @param {string[][]} items
  * @param {string} ruleKey
  * @param {string} ruleValue

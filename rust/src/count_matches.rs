@@ -1,6 +1,6 @@
 /// copyright: https://leetcode.com/problems/count-items-matching-a-rule/submissions/
-/// Runtime: 12 ms, faster than 97.78%.
-/// Memory Usage: 4.1 MB, less than 68.89%.
+	/// Runtime: 12 ms, faster than 97.78%.
+	/// Memory Usage: 4.1 MB, less than 68.89%.
 pub fn count_matches(items: &[[&str; 3]; 3], rule_key: &str, rule_value: &str) -> u32 {
     let mut num = 0u32;
     for item in items {
