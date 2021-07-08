@@ -20,12 +20,17 @@ def user_unsafe_password(user):
 
 def homepage(request):
     return render(request, "users/home.html", {"title": "Homepage"})
-
+# Alex _ leader
+# diana - Quintrix
+# David - Quintrix
+# Don Instructor
 
 def about(request):
     return render(request, "users/about.html", {"title": "About"})
 
-
+def register_dependent(request):
+    
+    return 
 def handle_get_addresses(user, idempotent_key=None):
     addresses = user.profile.addresses.all()
     return addresses.get(idempotent_key=idempotent_key) if idempotent_key else addresses

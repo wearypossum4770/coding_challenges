@@ -1,5 +1,4 @@
 [
-
   {
     "model": "users.user",
     "pk": 81,
@@ -11172,8 +11171,8 @@
     "model": "blog.post",
     "pk": 2,
     "fields": {
-      "publication_type":"CONCMNT",
-      "is_public":false,
+      "publication_type": "CONCMNT",
+      "is_public": false,
       "owner": 171,
       "title": "The Real Kempachi",
       "content": "Feeling cute might kill Retsu Unohana later. IDK",
@@ -11184,8 +11183,8 @@
     "model": "blog.post",
     "pk": 3,
     "fields": {
-      "is_public":true,
-      "publication_type":"ANNCMNT",
+      "is_public": true,
+      "publication_type": "ANNCMNT",
       "owner": 137,
       "title": "The new Commander",
       "content": "I'm the new commander",
