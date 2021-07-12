@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
-
-const Schema = mongoose.Schema;
-const { Date, ObjectId, String, Number } = Schema;
-const User = new Schema({
-  employee_id: ObjectId,
-  first_name: String,
-  middle_name: String,
-  last_name: String,
-  date_of_birth: String,
-  email: String,
-  phone_number: String,
-  department: String,
-  salaries_and_wages: String,
-  position: String,
-  start_date: Date,
-  end_date: Date,
-  date_created: Date,
-  date_modified: Date,
-});
+export default class User {
+  constructor() {
+    this.address;
+  }
+  createUser({
+    first_name = "",
+    middle_name = "",
+    last_name = "",
+    email = "",
+    phone_number = "",
+  }) {
+    this.firstName = first_name;
+    this.middleName = middle_name;
+    this.lastName = last_name;
+    this.email = email;
+    this.phoneNumber = phone_number;
+  }
+  getAddress(address) {
+    let { streetOne, streetTwo, city, state, zipCode } = address;
+  }
+  setAddress() {}
+}

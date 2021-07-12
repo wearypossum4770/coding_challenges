@@ -1,8 +1,15 @@
 import Timesheet from "./components/Timesheet.js";
-function clockIn({ clock_id, ...timesheet }) {
-  
-  
-  return (timesheet.endDate.getTime() - timesheet.startDate.getTime())*1.6666666666667
+import mongodb from "mongodb";
+let databaseName = "accountingDB";
+const MongoClient = mongodb.MongoClient;
+let orihime_kurosaki = {
+  _id:"60ecc493009ab423506f7916"
+}
+function clockIn({ clock_id, timesheet_id, ...timesheet }) {
+  return (
+    (timesheet.endDate.getTime() - timesheet.startDate.getTime()) *
+    1.6666666666667
+  );
   return new Date();
 }
 function clockOut({ clock_id, ...timesheet }) {
@@ -19,6 +26,5 @@ let timesheet = new Timesheet({
   totalHours: 12,
   date_modified: "2017-09-06T00:12:43",
 });
-let obj = clockIn(timesheet)
-console.log(obj)
-console.log(timesheet);
+let obj = clockIn(timesheet);
+function obfuscate (data){}
