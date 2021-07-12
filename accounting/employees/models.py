@@ -7,10 +7,35 @@ from django.db.models import (CharField, DateField, DateTimeField,
                               DecimalField, EmailField, ForeignKey,BooleanField,
                               IntegerChoices, IntegerField, ManyToManyField,CASCADE,
                               Model, UUIDField)
-
-
+class TimeEntry(Model):
+    total_hours = IntegerField()
+class Leave(Model):
+    class Status(TextChoices):
+        COMPLETED = "CMPD"
+        APPROVED = "APPD"
+    class Type(TextChoices):
+        MILITARY = 'MIL'
+        UNPAID="NOTP"
+        PAID='PAID'
+        BEREAVEMENT = 'BRVT'
+        COMPENSATORY = 'COMP'
+        COURT = 'CURT'
+        JURY_DUTY = 'JURY'
+        PARENTAL = 'PARN'
+        FAMILY_MEDICAL = "FMLA"
+    balance = IntegerField()
+    hours_requested = IntegerField()    
+    description = CharField(max_length=100,null=True, blank=True)
+    start_date = DateField(null=True, blank=True)
+    end_date = DateField(null=True, blank=True)
+    date_created = DateTimeField(auto_now_add=True, null=True, blank=True)
+    date_modified = DateTimeField(auto_now=True, null=True, blank=True)
+    def accrue_leave(self, credit=None):
+        if credit:
+            self.balance+=credit
 # Create your models here.
 class Salary(Model):
+    gross_pay= DecimalField(decimal_places=2, max_digits=11)
     taxable_wages = DecimalField(decimal_places=2, max_digits=11)
 
 class Position(Model):
@@ -75,14 +100,15 @@ class Employee(Model):
     phone_number = CharField(max_length=15, null=True, blank=True)
     department = ForeignKey(Department, on_delete=CASCADE)
     clock_id = CharField(max_length=15,null=True, blank=True)
+    leave_history = ManyToManyField(Leave)
     # salaries_and_wages = ManyToManyField(Salary)
-    position = ManyToManyField(Position)
+    # position = ManyToManyField(Position)
     start_date = DateField(null=True, blank=True)
     end_date = DateField(null=True, blank=True)
     date_created = DateTimeField(auto_now_add=True, null=True, blank=True)
     date_modified = DateTimeField(auto_now=True, null=True, blank=True)
-    def current_position(self):
-        self.position
+    # def current_position(self):
+    #     self.position
     def pay_rate_per_unit(self, total=None, unit=None):
         return total / table_3.get(unit)
 

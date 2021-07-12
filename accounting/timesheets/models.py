@@ -12,6 +12,7 @@ class Timesheet(Model):
         APPROVED = "APPD", _("Approved but the pay run has not been posted")
         DECLINED = "DENY", _("Submitted and declined by the approver")
         COMPLETED = "CMPD", _("Approved and the pay run has been posted")
+    clock_id = CharField(max_length=15,null=True, blank=True)
 
     # timesheet_id=UUIDField(default=uuid4, null=True, blank=True)
     status = CharField(max_length=4, choices=Status.choices, default=Status.DRAFT)

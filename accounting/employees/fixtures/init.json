@@ -1,19 +1,19 @@
 [
-{
-    "model":"employees.employee",
-    "pk":1,
-    "fields":    {
-        "first_name" :"Cheryl",
-"middle_name" :"",
-"last_name" :"Crowson",
-"date_of_birth" :"1975-08-01",
-"email" :"",
-"phone_number" :"304.555.2192",
-"department" :"Accounting",
-"clock_id" :418,
+  {
+    "model": "employees.employee",
+    "pk": 1,
+    "fields": {
+      "first_name": "Cheryl",
+      "middle_name": "",
+      "last_name": "Crowson",
+      "date_of_birth": "1975-08-01",
+      "email": "",
+      "phone_number": "304.555.2192",
+      "department": "Accounting",
+      "clock_id": 418,
 
-"position" :"Payroll Specialist",
-"start_date" :"2021-7-1"
+      "position": "Payroll Specialist",
+      "start_date": "2021-7-1"
     }
-}
+  }
 ]
