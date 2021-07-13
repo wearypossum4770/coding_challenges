@@ -1,3 +1,0 @@
-export class SalesReceipt {
-  constructor() {}
-}
