@@ -10,5 +10,3 @@ export default function shuffle(nums, n) {
   }
   return target;
 }
-
-console.log(shuffle([1, 1, 2, 2], 2));

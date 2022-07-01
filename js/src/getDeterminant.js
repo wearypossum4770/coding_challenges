@@ -18,22 +18,3 @@ export default function getDeterminant(matrix) {
     }
   }
 }
-
-console.log(
-  getDeterminant([
-    [1, 2],
-    [-1, 3],
-  ]) === 5
-);
-console.log(
-  getDeterminant([
-    [0, 1],
-    [1, 1],
-  ]) === -1
-);
-console.log(
-  getDeterminant([
-    [69, 0],
-    [1, 1],
-  ]) === 69
-);

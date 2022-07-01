@@ -5,6 +5,6 @@ test.each([
   [[230, 10], 2300],
   [[480, 20], 9600],
 ])("test should calculated resistance", (testInput, testOutput) => {
-  let func = circuitPower(testInput);
+  let func = circuitPower(...testInput);
   expect(func).toBe(testOutput);
 });

@@ -1,4 +1,4 @@
-test.each([
+test.concurrent.each([
   [
     "234-609-1422, 350-802-0744,123-603-8762",
     ["234-609-1422", "350-802-0744", "123-603-8762"],
@@ -20,10 +20,7 @@ test.each([
     ["3112223333, 350.820.0744, 123-630-8762"],
     "311-222-3333, 350-820-0744, 123-630-8762",
   ],
-])("auto pass and skip", (testAction, testInput, testOutput) => {
-  console.log(testInput);
-  console.log(testAction);
-  console.log(testOutput);
+])("auto pass and skip", async (testAction, testInput, testOutput) => {
   // let func = USPhoneValidator(testInput)
   // expect(func).toBe(testOutput)
   expect(true).toBe(true);

@@ -1,3 +1,5 @@
+import derivative from "../src/derivative.js";
+
 test.each([
   [[1, 4], 1],
   [[3, -2], 12],
@@ -6,6 +8,6 @@ test.each([
   [[1254, 0], 0],
   [[-2, 10], -0.002],
 ])("correctly adds numbers", (test_input, expected) => {
-  const func = addition(...test_input);
+  const func = derivative(...test_input);
   expect(func).toEqual(expected);
 });

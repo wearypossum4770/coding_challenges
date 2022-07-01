@@ -24,3 +24,6 @@ const eh = [
     "DBTMTT00A01",
   ],
 ];
+test('skip test', () => {
+  expect(true).toBe(true)
+})

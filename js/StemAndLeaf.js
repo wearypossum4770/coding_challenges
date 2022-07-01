@@ -1,7 +1,7 @@
-class StemAndLeaf{
-    constructor(){
-     this.leaf
-     this.stem
-     this.frequency   
-    }
+class StemAndLeaf {
+  constructor() {
+    this.leaf;
+    this.stem;
+    this.frequency;
+  }
 }

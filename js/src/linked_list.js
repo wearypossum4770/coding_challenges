@@ -1,4 +1,3 @@
-
 // Traversy media Linked List
 class Node {
   constructor(data, next = null) {
@@ -61,5 +60,3 @@ l.insertAtHead(200);
 l.insertAtHead(300);
 l.insertAtTail(20);
 l.printData();
-
-

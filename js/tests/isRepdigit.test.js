@@ -1,6 +1,9 @@
-Test.assertEquals(isRepdigit(6), true);
-Test.assertEquals(isRepdigit(66), true);
-Test.assertEquals(isRepdigit(666), true);
-Test.assertEquals(isRepdigit(6666), true);
-Test.assertEquals(isRepdigit(1001), false);
-Test.assertEquals(isRepdigit(-11), false, "The number must be >= 0");
+import isRepdigit from "../src/isRepdigit.js";
+test.concurrent.each([
+  [6, true],[66, true],[666, true],[6666, true],[1001, false],[
+  -11, false, "The number must be >= 0"
+  ],
+])("is a rep digit", async (param, output) => {
+  const func = isRepdigit(param);
+  expect(func).toBe(output);
+});
