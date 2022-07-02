@@ -2,7 +2,8 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
-
+author: "Stephen J. Smith <wearypossum4770@yahoo.com>"
+description: ''
 on:
   push:
     branches: ["main"]
@@ -17,11 +18,16 @@ jobs:
       matrix:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
+      - id: package
+      - uses: juliangruber/read-file-action@v1
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        with:
+          path: ./code_approvers.json
+      - name: Echo package.json
+        run: echo "${{ steps.package.outputs.content }}"    
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
