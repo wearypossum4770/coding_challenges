@@ -21,7 +21,7 @@ jobs:
         id: package
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./code_approvers.json
+          path: code_approvers.json
       - name: Echo code_approvers.json
         run: echo "${{ steps.package.outputs.content }}"
       - uses: actions/checkout@v3
