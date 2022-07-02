@@ -28,10 +28,11 @@ jobs:
       - name: Read code_approvers.json
         id: code_approvers
         uses: andstor/file-reader-action@v1
-        with:
-          path: "code_approvers.json"
+          with:
+            path: "code_approvers.json"
+              run: for u in $contents; do echo $u; done
       - name: Echo code_approvers.json
-        run: echo "${{ steps.code_approvers.outputs.content }}"
+        run: echo code_approvers
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
