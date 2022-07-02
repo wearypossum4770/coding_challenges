@@ -1,11 +1,11 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# implement 
-#   privilege audit. 
+# implement
+#   privilege audit.
 #   Establish least privilege as the default
 #   Implement separation of privileges.
 #   Provide just-in-time, granular access.
-#   Monitor and analyze privileged access. 
+#   Monitor and analyze privileged access.
 #   Review privileges regularly
 name: Node.js CI
 on:
@@ -30,7 +30,7 @@ jobs:
         uses: andstor/file-reader-action@v1
         with:
           path: "code_approvers.json"
-            run: for u in $contents; do echo $u; done
+      - run: for u in $contents; do echo $u; done
       - name: Echo code_approvers.json
         run: echo code_approvers
       - name: Use Node.js ${{ matrix.node-version }}
