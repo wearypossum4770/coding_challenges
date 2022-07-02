@@ -35,7 +35,7 @@ jobs:
         env:
           CODE_APPROVERS: ${{steps.code_approvers.outputs.contents}}
       - name: File contents
-        run: echo "${{ github.actor }}" echo "$CODE_APPROVERS"
+        run: echo "${{ github.ref }}" "${{ github.actor }}" echo "$CODE_APPROVERS"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
