@@ -25,7 +25,6 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Read code_approvers.json
