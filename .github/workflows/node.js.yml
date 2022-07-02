@@ -13,7 +13,9 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
+env: 
+  continue: true
+  time: 3
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +25,7 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      - continue-on-error: ${{ fromJSON(env.continue) }}
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Read code_approvers.json
@@ -31,9 +34,9 @@ jobs:
         with:
           path: code_approvers.json
         env:
-          CODE_APPROVERS: ${{ steps.code_approvers.outputs.contents }}
+          CODE_APPROVERS: ${{fromJSON(steps.code_approvers.outputs.contents)}}
       - name: File contents
-        run: echo $CODE_APPROVERS
+        run: echo "$CODE_APPROVERS"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
