@@ -18,12 +18,12 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Read code_approvers.json
-        id: package
+        id: code_approvers
         uses: juliangruber/read-file-action@v1
         with:
           path: code_approvers.json
       - name: Echo code_approvers.json
-        run: echo "${{ steps.package.outputs.content }}"
+        run: echo "${{ steps.code_approvers.outputs.content }}"
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
