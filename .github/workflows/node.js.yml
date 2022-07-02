@@ -21,13 +21,13 @@ jobs:
     steps:
       - id: package
       - uses: juliangruber/read-file-action@v1
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - name: Use Node.js ${{ matrix.node-version }}
         with:
           path: ./code_approvers.json
       - name: Echo package.json
         run: echo "${{ steps.package.outputs.content }}"    
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Use Node.js ${{ matrix.node-version }}
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
