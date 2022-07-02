@@ -33,7 +33,7 @@ jobs:
         env:
           CODE_APPROVERS: ${{ steps.code_approvers.outputs.contents }}
       - name: File contents
-        run: for user in $CODE_APPROVERS; do echo user; done
+        run: for user in $CODE_APPROVERS; do echo ${{user.email}}; done
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
