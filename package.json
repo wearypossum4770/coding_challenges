@@ -18,8 +18,8 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --config ./.jest.config.mjs",
-    "pretty": " node --max-old-space-size=6144  node_modules/.bin/prettier --write . ",
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest) --config ./.jest.config.mjs",
+    "pretty": "yarn node --max-old-space-size=6144  $(yarn bin prettier) --write ./ ",
     "lint": "",
     "pretty:rust": "node ./cleaner.js && yarn pretty",
     "new": "node ./cleaner.js && node ./new_module.js"

@@ -30,8 +30,10 @@ jobs:
         uses: andstor/file-reader-action@v1
         with:
           path: code_approvers.json
+        env:
+          CODE_APPROVERS: ${{ steps.code_approvers.outputs.contents }}
       - name: File contents
-        run: echo "${{ steps.code_approvers.outputs.contents }}"
+        run: for user in $CODE_APPROVERS; do echo user; done
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
