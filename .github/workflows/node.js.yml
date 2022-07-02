@@ -23,6 +23,8 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      -name: Checkout code
+        - uses: actions/checkout@v3
       - name: Read code_approvers.json
         id: code_approvers
         uses: andstor/file-reader-action@v1
@@ -30,7 +32,6 @@ jobs:
           path: "code_approvers.json"
       - name: Echo code_approvers.json
         run: echo "${{ steps.code_approvers.outputs.content }}"
-      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
