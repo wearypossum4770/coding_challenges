@@ -10,13 +10,5 @@
       "request": "launch",
       "type": "node-terminal"
     },
-
-    {
-      "type": "kotlin",
-      "request": "launch",
-      "name": "Kotlin Launch",
-      "projectRoot": "${workspaceFolder}/android",
-      "mainClass": "path.to.your.MainClassKt"
-    }
   ]
 }
