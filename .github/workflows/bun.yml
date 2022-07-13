@@ -11,7 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Dependencies
+      - name: Install Bun Runtime
         run: curl https://bun.sh/install | bash
+      - name: Set Bun Completions
         run: bun completions
+      - name: run tests
         run: bun wiptest
