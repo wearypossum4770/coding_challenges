@@ -3,6 +3,7 @@
   "packageManager": "yarn@3.2.1",
   "type": "module",
   "dependencies": {
-    "jest": "^28.1.2"
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1"
   }
 }

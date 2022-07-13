@@ -1,3 +1,1 @@
-export default function calculator(param) {
-
-}
+export default function calculator(param) {}

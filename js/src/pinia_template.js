@@ -1,11 +1,16 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 const getters = {
-  chorus: ({ bottlesOfBeer }) => (bottlesOfBeer !== 1 ? `${bottlesOfBeer} bottles of beer on the wall, ${bottlesOfBeer} bottles of beer.
-    Take one down and pass it around, ${bottlesOfBeer - 1} bottles of beer on the wall.` : `1 bottle of beer on the wall, 1 bottle of beer.
+  chorus: ({ bottlesOfBeer }) =>
+    bottlesOfBeer !== 1
+      ? `${bottlesOfBeer} bottles of beer on the wall, ${bottlesOfBeer} bottles of beer.
+    Take one down and pass it around, ${
+      bottlesOfBeer - 1
+    } bottles of beer on the wall.`
+      : `1 bottle of beer on the wall, 1 bottle of beer.
     Take one down and pass it around, no more bottles of beer on the wall.
     No more bottles of beer on the wall, no more bottles of beer.
-    Go to the store and buy some more, 99 bottles of beer on the wall.`),
+    Go to the store and buy some more, 99 bottles of beer on the wall.`,
 };
 const actions = {
   async runner() {
@@ -23,7 +28,7 @@ const state = () => ({
   bottlesOfBeer: 99,
 });
 
-export default defineStore('pinia_template', {
+export default defineStore("pinia_template", {
   getters,
   actions,
   state,
