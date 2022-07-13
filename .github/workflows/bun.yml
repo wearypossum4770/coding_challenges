@@ -13,4 +13,5 @@ jobs:
     steps:
       - name: Install Bun Runtime
         sh: curl https://bun.sh/install | bash && export BUN_INSTALL="/home/runner/.bun" && export PATH="$BUN_INSTALL/bin:$PATH && bun --version && exit 0
+        run: echo "$PATH"
         # && bun completions && bun wiptest
