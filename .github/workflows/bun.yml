@@ -15,7 +15,7 @@ jobs:
         run: echo $PATH && mkdir -p /home/runner/.bun && curl https://bun.sh/install | bash
         shell: bash
       - name: Set bun on path
-        run:    export BUN_INSTALL="/home/runner/.bun" && export PATH="$BUN_INSTALL/bin:$PATH"
+        run: export PATH="/home/runner/.bun/bin:$PATH"
         shell: bash
       - name: Check Path
         run: echo "$BUN_INSTALL/bin:$PATH"
