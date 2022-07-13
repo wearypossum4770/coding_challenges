@@ -3,6 +3,16 @@
     "firstName": "Stephen",
     "middleName": "Jerome",
     "lastName": "Smith",
-    "email": "wearypossum4770@yahoo.com"
+    "email": "wearypossum4770@yahoo.com",
+    "username": "wearypossum4770",
+    "enforcePolicies": true,
+    "permissions": [
+      {
+        "name": "read",
+        "identifier": "read:issue"
+      },
+      "read:", "write:", "create:", "edit:", "send:", "delete:"
+    ],
+    "repoAccess": ["coding_challenges"]
   }
 ]
