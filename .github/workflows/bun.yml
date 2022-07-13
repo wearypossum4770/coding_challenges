@@ -11,16 +11,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Bun Runtime
-        run: echo $PATH && mkdir -p /home/runner/.bun && curl https://bun.sh/install | bash
-        shell: bash
-      - name: Set bun on path
-        run: export PATH="/home/runner/.bun/bin:$PATH"
-        shell: bash
-      - name: Check Path
-        run: echo "$BUN_INSTALL/bin:$PATH"
-        shell: bash
-      - name: Check BUN installation
-        run:  bun --version
-        shell: bash
-        # && bun completions && bun wiptest
+      - name: Setup Bun Runtime
+        uses: antongolub/action-setup-bun@v1
+          with:
+            # Optional, if empty the latest bun version will be used
+            # Examples: 0.0.77, 0.1.2, >=0.1
+            bun-version: 0.1.2
+
+            # Optional, default is 'Jarred-Sumner/bun-releases-for-updater'
+            bun-repo: 'Jarred-Sumner/bun-releases-for-updater'
+
+            # Override bunfig.toml inners
+            # Optional. JSON-formatted string as input
+            # See: https://github.com/oven-sh/bun#bunfigtoml
+            bun-config: '{"install: {"production": false}}'
+            
+            # Attach $BUN_INSTALL/install/cache to action/cache
+            # Optional, defaults to false
+            cache: true
+
+            # actions/tool-cache provides a cache for the current job only
+            # Use actions/cache to store the bun binary for the whole workflow
+            # Optional, defaults to false
+            cache-bin: true
+
+            # Optional, default is process.platform
+            # Examples: darwin, linux
+            platform: 'linux'
+
+            # Optional, default is process.arch
+            arch: 'x64'
+            
+            # Authenticated requests get a higher rate limit
+            # Optional. Defaults to ${{ github.token }}
+            token: 'gh-token'
+
+- name: Run script
+  run: bun index.js
