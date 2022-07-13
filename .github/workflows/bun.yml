@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Bun Runtime
-        run: echo $PATH mkdir /home/runner/.bun && curl https://bun.sh/install | bash
+        run: echo $PATH mkdir -p /home/runner/.bun && curl https://bun.sh/install | bash
         shell: bash
       - name: Set bun on path
         run: export BUN_INSTALL="/home/runner/.bun" && export PATH="$BUN_INSTALL/bin:$PATH"
