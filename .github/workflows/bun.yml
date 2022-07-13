@@ -14,4 +14,4 @@ jobs:
       - name: Setup Bun Runtime
         uses: antongolub/action-setup-bun@v1
       - name: Run script
-        run: bun index.js
+        run: bun wiptest
