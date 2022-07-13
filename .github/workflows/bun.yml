@@ -12,6 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Bun Runtime
-        run: curl https://bun.sh/install | bash
-        shell:    export BUN_INSTALL="/home/runner/.bun" && export PATH="$BUN_INSTALL/bin:$PATH && bun --version && exit 0
+        sh: curl https://bun.sh/install | bash && export BUN_INSTALL="/home/runner/.bun" && export PATH="$BUN_INSTALL/bin:$PATH && bun --version && exit 0
         # && bun completions && bun wiptest
