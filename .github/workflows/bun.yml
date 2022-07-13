@@ -1,0 +1,17 @@
+name: BUN CI
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+env:
+  continue: true
+  time: 3
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Dependencies
+        run: curl https://bun.sh/install | bash
+        run: bun completions
+        run: bun wiptest

@@ -1,7 +1,7 @@
 {
   "name": "coding_challenges",
   "packageManager": "yarn@3.2.1",
-  "type":"module",
+  "type": "module",
   "dependencies": {
     "jest": "^28.1.2"
   }
