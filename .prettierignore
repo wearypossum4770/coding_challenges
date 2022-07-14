@@ -7,3 +7,6 @@ target
 *.mod
 # Ignore all HTML files:
 # *.html
+.yarn/
+.storybook/
+.vscode/

@@ -11,7 +11,12 @@
         "name": "read",
         "identifier": "read:issue"
       },
-      "read:", "write:", "create:", "edit:", "send:", "delete:"
+      "read:",
+      "write:",
+      "create:",
+      "edit:",
+      "send:",
+      "delete:"
     ],
     "repoAccess": ["coding_challenges"]
   }
