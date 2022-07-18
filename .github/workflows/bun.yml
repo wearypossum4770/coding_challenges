@@ -23,6 +23,10 @@ jobs:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      - name: Find in commit messages
+        uses: atlassian/gajira-find-issue-key@master
+        with:
+          from: branch
       # - name: Jira Issue Transition
       # You may pin to the exact commit or the version.
       # uses: atlassian/gajira-transition@0fb280dcc874710a4ac5eced8789e1def040e35d
