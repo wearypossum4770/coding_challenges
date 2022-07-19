@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import romanToInt from "../src/romanToInt.js";
+import {romanToInt} from "../src/index.js";
 
 describe("roman numeral converter", () => {
   it("should give the correct value", () => {
