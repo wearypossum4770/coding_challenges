@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 
-import {getVoteCount} from "../src/index.js";
+import { getVoteCount } from "../src/index.js";
 describe("Summation of vote totals", () => {
   it("calculates the correct total", () => {
     expect(getVoteCount({ upvotes: 13, downvotes: 0 })).toBe(13);
