@@ -1,6 +1,11 @@
 pub mod addition;
+pub mod calc_age;
 pub mod calculator;
+pub mod circuit_power;
 pub mod generation;
 pub mod get_vote_count;
 pub mod hello;
 pub mod next_integer;
+// pub mod remove_element;
+pub mod search_insert;
+pub mod tri_area;
