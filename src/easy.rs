@@ -9,3 +9,4 @@ pub mod next_integer;
 // pub mod remove_element;
 pub mod search_insert;
 pub mod tri_area;
+pub mod add_binary;
