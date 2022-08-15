@@ -1,0 +1,16 @@
+{
+  "include": ["./src"],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "types": ["vitest/globals"]
+  }
+}
