@@ -11,10 +11,7 @@ const reverseInteger = (num) => {
     }
   }
   if (result[0] === '-') target = `-${target}`
-return target
+return parseInt(target)
 }
 
-// export default reverseInteger;
-console.log(reverseInteger(123)) //321
-console.log(reverseInteger(-123)) // -321
-console.log(reverseInteger(120)) //21
+export default reverseInteger;
