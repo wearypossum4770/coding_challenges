@@ -1,0 +1,25 @@
+// import { divisibleByFive } from "./index.js"
+// import { expect, it } from "bun:test";
+
+// // it.each([
+// //   [7, false],
+// //   [5, true],
+// //   [15, true],
+// //   [33, false],
+// //   [-55, true],
+// //   [37, false],
+// //   [-18, false],
+// //   [999, false],
+// //   [2, false],
+// // ])
+
+//   it("checks divisibility by 5", () => expect(divisibleByFive(7)).toBe(false))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(5)).toBe(true))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(15)).toBe(true))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(33)).toBe(false))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(-55)).toBe(true))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(37)).toBe(false))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(-18)).toBe(false))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(999)).toBe(false))
+//   it("checks divisibility by 5", () => expect(divisibleByFive(2)).toBe(false))
+

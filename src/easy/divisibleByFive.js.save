@@ -1,0 +1,6 @@
+const divisibleByFive = (n) => {
+  const result = n / 5;
+  console.log(result, Number.isInteger(result));
+  return false;
+};
+export default divisibleByFive;
