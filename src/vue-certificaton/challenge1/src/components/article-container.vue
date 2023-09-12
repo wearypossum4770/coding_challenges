@@ -1,10 +1,5 @@
 <template>
-    <article>
-
-    </article>
+  <article></article>
 </template>
 
-<script setup>
-
-</script>
-
+<script setup></script>
