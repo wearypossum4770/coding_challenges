@@ -1,0 +1,204 @@
+[
+  {
+    "demographics": "none",
+    "genre": "Action & Adventure",
+    "code": 1365,
+    "id": 1
+  },
+  { "demographics": "none", "genre": "Animation", "code": 4698, "id": 2 },
+  { "demographics": "none", "genre": "Anime", "code": 7424, "id": 3 },
+  { "demographics": "none", "genre": "Biographical", "code": 1096, "id": 4 },
+  { "demographics": "none", "genre": "Camp", "code": 1252, "id": 5 },
+  {
+    "demographics": "none",
+    "genre": "Children & Family",
+    "code": 783,
+    "id": 6
+  },
+  { "demographics": "none", "genre": "Classic", "code": 31574, "id": 7 },
+  { "demographics": "none", "genre": "Comedies", "code": 6548, "id": 8 },
+  {
+    "demographics": "none",
+    "genre": "Comic Book & Superhero",
+    "code": 10118,
+    "id": 9
+  },
+  {
+    "demographics": "none",
+    "genre": "Country & Western/Folk",
+    "code": 1105,
+    "id": 10
+  },
+  { "demographics": "none", "genre": "Documentaries", "code": 6839, "id": 11 },
+  { "demographics": "none", "genre": "Dramas", "code": 5763, "id": 12 },
+  { "demographics": "none", "genre": "Horror", "code": 8711, "id": 13 },
+  { "demographics": "none", "genre": "Music", "code": 1701, "id": 14 },
+  { "demographics": "none", "genre": "Romantic", "code": 8883, "id": 15 },
+  {
+    "demographics": "none",
+    "genre": "Sci-fi & Fantasy",
+    "code": 1492,
+    "id": 16
+  },
+  { "demographics": "none", "genre": "Sports", "code": 4370, "id": 17 },
+  { "demographics": "none", "genre": "Thrillers", "code": 8933, "id": 18 },
+  { "demographics": "none", "genre": "TV Shows", "code": 83, "id": 19 },
+  { "demographics": "none", "genre": "Westerns", "code": 7700, "id": 20 },
+  {
+    "demographics": "none",
+    "genre": "Action Comedies",
+    "code": 43040,
+    "id": 21
+  },
+  {
+    "demographics": "none",
+    "genre": "Action Sci-Fi & Fantasy",
+    "code": 1568,
+    "id": 22
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Action & Adventure",
+    "code": 222,
+    "id": 23
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Biographical Dramas",
+    "code": 1848,
+    "id": 24
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Comedies",
+    "code": 7120,
+    "id": 25
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Coming-of-age Movies",
+    "code": 2724,
+    "id": 26
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Crime Movies",
+    "code": 873,
+    "id": 27
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Cult Movies",
+    "code": 2854,
+    "id": 28
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Documentaries",
+    "code": 4720,
+    "id": 29
+  },
+  { "demographics": "Gay & Lesbian", "genre": "Dramas", "code": 500, "id": 30 },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Historical Documentaries",
+    "code": 125,
+    "id": 31
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Movies",
+    "code": 5977,
+    "id": 32
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Movies from the 1960s",
+    "code": 4374,
+    "id": 33
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Movies from the 1970s",
+    "code": 4396,
+    "id": 34
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Movies from the 1980s",
+    "code": 4429,
+    "id": 35
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Mysteries",
+    "code": 4050,
+    "id": 36
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Political Dramas",
+    "code": 4861,
+    "id": 37
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Psychological Movies",
+    "code": 5,
+    "id": 38
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Romance",
+    "code": 3329,
+    "id": 39
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Showbiz Comedies",
+    "code": 2053,
+    "id": 40
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Social & Cultural Documentaries",
+    "code": 3408,
+    "id": 41
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Social Issue Dramas",
+    "code": 2619,
+    "id": 42
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Tearjerkers",
+    "code": 1469,
+    "id": 43
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "Thrillers",
+    "code": 3091,
+    "id": 44
+  },
+  {
+    "demographics": "Gay & Lesbian",
+    "genre": "TV Shows",
+    "code": 65263,
+    "id": 45
+  },
+  {
+    "demographics": "British",
+    "genre": "Christmas Children & Family Films",
+    "code": 1527064,
+    "id": 46
+  },
+  {
+    "demographics": "Canadian",
+    "genre": "Christmas Children & Family Films",
+    "code": 1721544,
+    "id": 47
+  }
+]

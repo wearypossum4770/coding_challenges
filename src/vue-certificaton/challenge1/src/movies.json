@@ -26,6 +26,15 @@
       "rating": 3,
       "genres": ["Action", "Crime", "Drama"],
       "inTheaters": false
+    },
+    {
+      "id": 4,
+      "name": "Were the World Mine",
+      "description": "A bullied and demoralized gay student at an all-boys school uses a magical flower derived from Shakespeare's 'A Midsummer Night's Dream' to turn many in his community gay, including a comely rugby player for himself.",
+      "image": "https://m.media-amazon.com/images/M/MV5BODcwMzkyOTMyM15BMl5BanBnXkFtZTcwMTA2Mjg5MQ@@._V1_FMjpg_UY700_.jpg",
+      "rating": 0,
+      "genres": ["comedy", "musical", "fantasy", "adventure", "romance"],
+      "inTheaters": false
     }
   ]
 }
