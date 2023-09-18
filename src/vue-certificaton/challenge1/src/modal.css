@@ -2,26 +2,25 @@ div.new-movie-form {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
-  
 }
 
 dialog.create-movie-form {
   width: 50%;
   margin: auto;
 }
-dialog.create-movie-form   button {
+dialog.create-movie-form button {
   padding: 10px 20px;
   width: 12ch;
   font-weight: bold;
   font-size: 14px;
   border: none;
 }
-  dialog.create-movie-form      button#cancel-button {
-    background-color: var(--california-wine);
-  }
- dialog.create-movie-form  button#save-button {
-    background-color: var(--enchanged-wells);
-  }
+dialog.create-movie-form button#cancel-button {
+  background-color: var(--california-wine);
+}
+dialog.create-movie-form button#save-button {
+  background-color: var(--enchanged-wells);
+}
 .modal-mask {
   position: fixed;
   z-index: 10;

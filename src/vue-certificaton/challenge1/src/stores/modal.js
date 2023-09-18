@@ -1,73 +1,36 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
-import { unref, ref } from "vue";
-
-const getters = {};
-
-const actions = {
-  async showModalDecorator(wrapped) {
-    return function decorator(...args) {
-      const result = wrapped.call(this, args);
-      return { ...args, result };
-    };
-  },
-
-  /**
-   * @description noop if modal is opened.
-   * @returns { Promise.<this> } method is chainable.
-   */
-  async openModal() {
-    if (!this.isOpen && !this.ariaModal) {
-      this.isOpen = true;
-    }
-    return this;
-  },
-  /**
-   *
-   * @param { HTMLDialogElement } dialog
-   * @returns
-   */
-  async showModal(dialog) {
-    const modal = unref(dialog);
-    modal.showModal();
-    return this;
-  },
-  async show() {
-    this.isOpen = true;
-    return this;
-  },
-  /**
-   * @description noop if modal is closed.
-   * @returns { Promise.<this> } method is chainable.
-   */
-  async closeModal() {
-    if (this.isOpen && !this.ariaModal) {
-      this.isOpen = false;
-    }
-    return this;
-  },
-};
-/**
- * @type ModalState
- * @param { boolean } isOpen - if modal should show.
- * @param { boolean } modalIsOpen - See {@link ModalState.isOpen}
- * @param { string } ariaLabelledby - the element id for that references aria-labelledby custom property for modal ** DO NOT USE ON DIALOG **
- * @param { string } ariaDescribedby - the element id for that references aria-describedby custom property for modal ** DO NOT USE ON DIALOG **
- * @returns { Object } an initial state object.
- */
-const state = () => ({
-  modalIsOpen: false,
-  isOpen: false,
-  id: "favorit-animal-modal",
-  ariaLabelledby: "dialog1Title",
-  ariaDescribedby: "dialog1Desc",
-  ariaModal: false,
-  baseModalPopover: ref(null),
-});
+import { unref, ref, reactive, computed } from "vue";
+import { arrayItemSwap } from '@/helpers'
 /**
  * @type StoreDefinition
  * @name ModalStoreDefinition
  */
-const store = defineStore("modal", { getters, actions, state });
+const store = defineStore("modal", () => {
+  const state = ref([]);
+
+  const partialState = ref({
+    id: 0,
+    name: '',
+    description: '',
+    image: '',
+    rating: 0,
+    genres: [],
+    inTheaters: false,
+  })
+
+  const totalMovies = computed(() => unref(state).length ?? 0);
+  const averageRating = computed(
+    () => unref(state).reduce((a, b) => a + b.rating, 0) / unref(totalMovies),
+  );
+  return {
+    id: ref("add-movie-modal"),
+    editMode: ref(false),
+    partialState,
+    state,
+    totalMovies,
+    averageRating,
+  };
+});
 export default store;
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(store, import.meta.hot));

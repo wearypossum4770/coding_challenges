@@ -1,6 +1,10 @@
 @import url(./modal.css);
 @import url(./colors.css);
 
+div.movie-list-actionbar button {
+  padding: 5px 20px;
+  margin: 0 5px;
+}
 .movie-app {
   display: flex;
   flex-direction: row;
@@ -38,6 +42,18 @@ button.movie-list-rating-button {
   text-overflow: ellipsis;
   text-transform: capitalize;
   gap: 6px;
+}
+aside.movie-app-action-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+}
+aside.movie-app-action-menu button {
+  margin: 0 20px;
+  padding: 5px 10px;
+  font-weight: 700;
+  /* border: */
 }
 .movie-genre {
   padding: 3px 14px;

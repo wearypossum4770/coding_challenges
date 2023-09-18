@@ -1,43 +1,46 @@
 <script setup>
-import { ref, onMounted, reactive } from "vue";
-import { items } from "./movies.json";
-import StarIcon from "@/components/star-icon.vue";
-import BaseModal from "@/components/base-modal.vue";
-import useMovie from "@/hooks/use-movie.ts";
-import { displayProps, showModal, handleRating } from "@/helpers.js";
+// https://developer.chrome.com/blog/introducing-popover-api/
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close
+import { ref, onMounted, reactive, nextTick } from "vue";
+import { items } from "@/movies.json";
+import genres from "@/assets/data/genre-database.json";
 
-onMounted(async () => {
-  const options = {
-    headers: { "Content-Type": "application/json" },
-    mode: 'cors',
-  }
-  try {
-    const resp = await fetch('http://localhost:3000/movies', options)
-    if (resp.ok) {
-      state.value = await resp.json()
-    }
-  } catch ({ message }) {
-    console.log({ message })
-  }
-})
-const $refs = ref(null);
-const state = ref([]);
+import useModal from "@/stores/modal.js";
+import StarIcon from "@/components/star-icon.vue";
+import useMovie from "@/hooks/use-movie.ts";
+import { displayProps, showModal, initialState, handleRating, drainArrayByIndex } from "@/helpers.js";
+const modal = useModal();
 const baseModalPopover = ref(null);
-const data = reactive({
-  state,
-  modalIsOpen: false,
-  get totalMovies() { return state.value.length },
-  get averageRating() { return state.value.reduce((a, b) => a + b.rating, 0) / this.totalMovies }
-})
+
+onMounted(async () => modal.$patch(await initialState()));
+
+const enterEditMode = async (id) => {
+  modal.$patch({
+    partialState: modal.state[id], editMode: true,
+  })
+  baseModalPopover.value.showModal()
+}
+const removeFromList = (id, movieId) =>
+  modal.$patch({ state: drainArrayByIndex(modal.state, [id]) })
+
+
 
 </script>
 
 <template>
-  <button @click="showModal(baseModalPopover)">Add Movie</button>
-  <base-modal ref="baseModalPopover" />
-  {{ `Total Movies ${data.totalMovies} / Average Rating: ${data.averageRating}` }}
+  <aside class="movie-app-action-menu">
+    <span>{{
+      `Total Movies ${modal.totalMovies
+        } / Average Rating: ${modal.averageRating.toFixed(1)}`
+    }}</span>
+    <div>
+      <button @click="showModal(baseModalPopover)">Add Movie</button>
+      <button>Remove Movie</button>
+    </div>
+  </aside>
   <div class="movie-app">
-    <article class="movie-list" v-for="movie in state" :key="movie.id" :data-key="movie.id">
+    <article class="movie-list" v-for="(movie, id) in modal.state" :key="movie.id" :data-key="id">
       <div class="movie-list-poster" :style="{ backgroundImage: `url(${movie.image})` }">
         <StarIcon class="five-point-star">
           <span class="five-point-star-rating">{{ displayProps(movie) }}</span>
@@ -50,12 +53,16 @@ const data = reactive({
             :key="`${movie.id}-${genre}`">{{ genre }}</span>
         </p>
         <p>{{ movie.description }}</p>
+        <div class="movie-list-actionbar">
+          <button @click="enterEditMode(id)"><img height="15" src="@/assets/images/icons/pen-solid.svg"></button>
+          <button @click="removeFromList(id)"><img height="15" src="@/assets/images/icons/trash-solid.svg"></button>
+        </div>
         <p>
           <span class="movie-list-rating">{{
             `Rating (${movie.rating} / 5)`
           }}</span>
           <button v-for="star in 5" class="movie-list-rating-button" :key="star" :data-movie-id="movie.id"
-            :data-user-rating="movie.rating" @click="handleRating(movie.id, star, state)"
+            :data-user-rating="movie.rating" @click="handleRating(id, star, modal.state)"
             :disabled="movie.rating === star" :data-star-rating="star">
             <star-icon is-button v-bind="movie" :is-active="movie.rating >= star" />
           </button>
@@ -63,4 +70,72 @@ const data = reactive({
       </div>
     </article>
   </div>
+  <Transition name="default-modal">
+    <dialog  ref="baseModalPopover" class="create-movie-form" :id="modal.id">
+      <form  @submit.prevent id="create-movie-form">
+        <h1>New Movie</h1>
+        <div class="new-movie-form">
+          <label> Name </label>
+          <input id="movie-name" name="name" autofocus  v-model="modal.partialState.name" >
+        </div>
+        <div class="new-movie-form">
+          <label>Description</label>
+          <textarea
+            v-model="modal.partialState.description"
+            name="description"
+          ></textarea>
+        </div>
+        <div class="new-movie-form">
+          <label>Image</label>
+          <input type="url" v-model="modal.partialState.image" name="image" >
+        </div>
+        <div class="new-movie-form">
+          <label>Genres</label>
+          <select
+            v-model="modal.partialState.genres"
+            id="genre-choice"
+            name="genres"
+            multiple
+          >
+            <option
+              v-for="genre in genres"
+              :key="genre.id"
+              :selected="modal.partialState.genres.includes(genre)"
+              data-genre-value="genre.code"
+              :value="genre.genre"
+            >
+              {{ genre.genre }}
+            </option>
+          </select>
+        </div>
+        <div class="new-movie-form">
+          <label>In Theatres?</label>
+          <input
+            type="checkbox"
+            name="inTheaters"
+            v-model="modal.partialState.inTheaters"
+          />
+        </div>
+        <footer class="new-movie-form-footer">
+          <button
+            @click="closeModal(baseModalPopover)"
+            popovertargetaction="hide"
+            :popovertarget="modal.id"
+            id="cancel-button"
+          >
+            Cancel
+          </button>
+          <button
+            id="save-button"
+            type="submit"
+            form="create-movie-form"
+            @click="handleSubmit"
+          >
+            Save
+          </button>
+        </footer>
+      </form>
+    </dialog>
+  </Transition>
+
 </template>

@@ -30,7 +30,7 @@
     "id": 10
   },
   { "demographics": "none", "genre": "Documentaries", "code": 6839, "id": 11 },
-  { "demographics": "none", "genre": "Dramas", "code": 5763, "id": 12 },
+  { "demographics": "none", "genre": "drama", "code": 5763, "id": 12 },
   { "demographics": "none", "genre": "Horror", "code": 8711, "id": 13 },
   { "demographics": "none", "genre": "Music", "code": 1701, "id": 14 },
   { "demographics": "none", "genre": "Romantic", "code": 8883, "id": 15 },
