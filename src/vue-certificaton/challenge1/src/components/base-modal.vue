@@ -1,31 +1,23 @@
 <template>
   <Transition name="default-modal">
     <dialog ref="baseModalPopover" class="create-movie-form" :id="modal.id">
-      <form  @submit.prevent id="create-movie-form">
+      <form @submit.prevent id="create-movie-form">
         <h1>New Movie</h1>
         <div class="new-movie-form">
           <label> Name </label>
-          <input id="movie-name" name="name" autofocus  :value="form.name" >
+          <input id="movie-name" name="name" autofocus :value="form.name" />
         </div>
         <div class="new-movie-form">
           <label>Description</label>
-          <textarea
-            :value="form.description"
-            name="description"
-          ></textarea>
+          <textarea :value="form.description" name="description"></textarea>
         </div>
         <div class="new-movie-form">
           <label>Image</label>
-          <input type="url" :value="form.image" name="image" >
+          <input type="url" :value="form.image" name="image" />
         </div>
         <div class="new-movie-form">
           <label>Genres</label>
-          <select
-            :value="form.genres"
-            id="genre-choice"
-            name="genres"
-            multiple
-          >
+          <select :value="form.genres" id="genre-choice" name="genres" multiple>
             <option
               v-for="genre in genres"
               :key="genre.id"
@@ -39,11 +31,7 @@
         </div>
         <div class="new-movie-form">
           <label>In Theatres?</label>
-          <input
-            type="checkbox"
-            name="inTheaters"
-            :value="form.inTheaters"
-          />
+          <input type="checkbox" name="inTheaters" :value="form.inTheaters" />
         </div>
         <footer class="new-movie-form-footer">
           <button
@@ -69,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref,reactive, onMounted, nextTick } from "vue";
+import { ref, reactive, onMounted, nextTick } from "vue";
 import genres from "@/assets/data/genre-database.json";
 import useModal from "@/stores/modal.js";
 import mulligans from "@/mulligans-data.json";
@@ -77,8 +65,8 @@ import { closeModal, addMovie } from "@/helpers.js";
 
 const modal = useModal();
 const baseModalPopover = ref(null);
-const form = reactive(modal.partialState)
-const isOpen = ref()
+const form = reactive(modal.partialState);
+const isOpen = ref();
 
 const validationRules = (rule) => {
   if (rule === "required") return /^ *$/;
@@ -86,7 +74,7 @@ const validationRules = (rule) => {
 };
 
 const handleSubmit = async ({ target: { form } }) => {
-  const payload = {...mulligans };
+  const payload = { ...mulligans };
   const options = {
     mode: "cors",
     method: "POST",
@@ -111,6 +99,5 @@ const handleSubmit = async ({ target: { form } }) => {
   }
 };
 
-defineExpose({baseModalPopover});
-
+defineExpose({ baseModalPopover });
 </script>

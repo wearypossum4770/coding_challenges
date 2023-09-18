@@ -1,6 +1,15 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
 import { unref, ref, reactive, computed } from "vue";
-import { arrayItemSwap } from '@/helpers'
+import { arrayItemSwap } from "@/helpers";
+const initialPartialState = () => ({
+  id: 0,
+  name: "",
+  description: "",
+  image: "",
+  rating: 0,
+  genres: [],
+  inTheaters: false,
+});
 /**
  * @type StoreDefinition
  * @name ModalStoreDefinition
@@ -8,15 +17,7 @@ import { arrayItemSwap } from '@/helpers'
 const store = defineStore("modal", () => {
   const state = ref([]);
 
-  const partialState = ref({
-    id: 0,
-    name: '',
-    description: '',
-    image: '',
-    rating: 0,
-    genres: [],
-    inTheaters: false,
-  })
+  const partialState = ref(initialPartialState());
 
   const totalMovies = computed(() => unref(state).length ?? 0);
   const averageRating = computed(
@@ -28,6 +29,8 @@ const store = defineStore("modal", () => {
     partialState,
     state,
     totalMovies,
+    $reset: () => (state.value = []),
+    resetPartialState: () => (partialState.value = initialPartialState()),
     averageRating,
   };
 });
